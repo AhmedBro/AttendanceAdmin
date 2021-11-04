@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "104394970994",
+    "project_id": "attendace-12035",
+    "storage_bucket": "attendace-12035.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104394970994:android:5585b0e1bb8044f6a16feb",
+        "android_client_info": {
+          "package_name": "com.Fcih.attendance_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104394970994-4s3k1k3vtnrkkbmit53am42k3npaeegl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Fcih.attendance_admin",
+            "certificate_hash": "691ee862663d5ad99c21b2de69c0e032f2912d69"
+          }
+        },
+        {
+          "client_id": "104394970994-rpaedda61dbcv3f6i0l721ced8i39saj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAngmSl3_7_lTUTKnMaW_vvUIvOtg-Ulnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104394970994-rpaedda61dbcv3f6i0l721ced8i39saj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
