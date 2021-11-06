@@ -1,9 +1,8 @@
-package com.Fcih.attendance_admin.Database
+package com.Fcih.attendance_admin.View.Database
 
 import android.content.Context
 import android.content.SharedPreferences
 import com.Fcih.attendance_admin.R
-import kotlinx.coroutines.flow.combine
 
 class SharedPreferences(mContext: Context) {
     val ADMIN_NAME: String = "mName"

@@ -17,7 +17,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
 
         <activity
-            android:name=".Activities.MainActivity"
+            android:name="com.Fcih.attendance_admin.View.Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

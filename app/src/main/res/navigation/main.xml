@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splash"
-        android:name="com.Fcih.attendance_admin.Fragments.Splash"
+        android:name="com.Fcih.attendance_admin.View.Fragments.Splash"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -17,19 +17,23 @@
             app:launchSingleTop="false"
             app:popEnterAnim="@anim/nav_default_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_enter_anim"
-            app:popUpToInclusive="false" />
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splash_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.Fcih.attendance_admin.Fragments.LoginFragment"
+        android:name="com.Fcih.attendance_admin.View.Fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.Fcih.attendance_admin.Fragments.HomeFragment"
+        android:name="com.Fcih.attendance_admin.View.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

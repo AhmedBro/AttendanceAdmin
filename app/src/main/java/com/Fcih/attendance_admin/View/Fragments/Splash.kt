@@ -1,30 +1,17 @@
-package com.Fcih.attendance_admin.Fragments
+package com.Fcih.attendance_admin.View.Fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.Fcih.attendance_admin.Database.SharedPreferences
+import com.Fcih.attendance_admin.View.Database.SharedPreferences
 import com.Fcih.attendance_admin.R
-import com.Fcih.attendance_admin.Activities.MainActivity
-
-import android.content.Intent
-import android.os.Handler
-import androidx.navigation.Navigator
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [Splash.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Splash : Fragment() {
     lateinit var mSharedPreferences: SharedPreferences
 
@@ -45,18 +32,24 @@ class Splash : Fragment() {
     private fun gotoNextPage() {
         Handler().postDelayed(Runnable {
             if (mSharedPreferences.IsLogin()) {
-
-                findNavController().navigate(R.id.action_splash_to_homeFragment)
+                val navOptions: NavOptions = NavOptions.Builder()
+                    .setPopUpTo(R.id.main, true)
+                    .build()
+                val action = SplashDirections.actionSplashToHomeFragment()
+                findNavController().navigate(action , navOptions)
 
 
             } else {
-                findNavController().navigate(R.id.action_splash_to_loginFragment)
+                val navOptions: NavOptions = NavOptions.Builder()
+                    .setPopUpTo(R.id.main, true)
+                    .build()
+                val action = SplashDirections.actionSplashToLoginFragment()
+                findNavController().navigate(action , navOptions)
 
             }
         }, 2000L)
 
     }
-
 
 
     companion object {

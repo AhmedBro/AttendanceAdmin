@@ -1,4 +1,4 @@
-package com.Fcih.attendance_admin.Fragments
+package com.Fcih.attendance_admin.View.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
