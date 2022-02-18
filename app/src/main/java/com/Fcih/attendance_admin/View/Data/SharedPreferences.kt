@@ -1,4 +1,4 @@
-package com.Fcih.attendance_admin.View.Database
+package com.Fcih.attendance_admin.View.Data
 
 import android.content.Context
 import android.content.SharedPreferences

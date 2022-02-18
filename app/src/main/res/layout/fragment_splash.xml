@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/logo"
-    tools:context=".View.Fragments.Splash">
+    tools:context=".View.Desgin.Fragments.Splash">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

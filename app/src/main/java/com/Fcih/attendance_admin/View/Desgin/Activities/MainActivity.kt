@@ -1,4 +1,4 @@
-package com.Fcih.attendance_admin.View.Activities
+package com.Fcih.attendance_admin.View.Desgin.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

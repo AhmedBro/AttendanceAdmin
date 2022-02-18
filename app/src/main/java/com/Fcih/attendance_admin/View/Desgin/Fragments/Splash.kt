@@ -1,4 +1,4 @@
-package com.Fcih.attendance_admin.View.Fragments
+package com.Fcih.attendance_admin.View.Desgin.Fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import com.Fcih.attendance_admin.View.Database.SharedPreferences
+import com.Fcih.attendance_admin.View.Data.SharedPreferences
 import com.Fcih.attendance_admin.R
 
 
