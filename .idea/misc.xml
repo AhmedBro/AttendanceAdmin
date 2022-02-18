@@ -3,13 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android Project/Fcih/AttendanceAdmin/app/src/main/res/layout/fragment_login.xml" value="0.18645833333333334" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/drawable/edit_text_login.xml" value="0.32009132420091324" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/drawable/login_back.xml" value="0.32009132420091324" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_home.xml" value="0.33489583333333334" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
+        <entry key="..\:/Users/Menna/AndroidStudioProjects/AttendanceAdmin/app/src/main/res/layout/fragment_login.xml" value="0.264" />
       </map>
     </option>
   </component>
