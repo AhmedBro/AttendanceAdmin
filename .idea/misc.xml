@@ -9,8 +9,10 @@
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_home.xml" value="0.33489583333333334" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
+        <entry key="..\:/AttendanceAdmin/app/src/main/res/drawable/round_btn.xml" value="0.20260416666666667" />
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/activity_main.xml" value="0.18645833333333334" />
-        <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/fragment_login.xml" value="0.18645833333333334" />
+        <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/fragment_home.xml" value="0.18645833333333334" />
+        <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/fragment_login.xml" value="0.24960505529225907" />
       </map>
     </option>
   </component>

@@ -11,4 +11,5 @@
     <color name="color_login">#0000FF</color>
     <color name="primary">#2BB189</color>
     <color name="grayLight">#F2F2F2</color>
+    <color name="whiteBack">#E5E5E5</color>
 </resources>
