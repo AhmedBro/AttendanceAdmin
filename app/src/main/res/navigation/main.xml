@@ -28,12 +28,15 @@
         android:id="@+id/loginFragment"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-
-    </fragment>
+        tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.ForgetPasswordFragment"
+        android:label="Forget Password"
+        tools:layout="@layout/fragment_forget_password" />
 </navigation>

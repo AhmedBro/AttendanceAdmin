@@ -7,4 +7,7 @@
     <string name="Mail">E-Mail</string>
     <string name="login">Login</string>
     <string name="forget_password"><u>Forget Password ?</u></string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="email">Email</string>
+    <string name="submit">submit</string>
 </resources>
