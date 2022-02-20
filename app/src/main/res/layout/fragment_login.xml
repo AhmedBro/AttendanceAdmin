@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whiteBack"
+    android:background="@color/white"
     android:theme="@style/Theme.MaterialComponents.Bridge"
     tools:context=".View.Desgin.Fragments.LoginFragment">
 
@@ -30,7 +30,7 @@
                 android:layout_height="300dp"
                 android:layout_marginStart="@dimen/_8ssp"
                 android:layout_marginEnd="@dimen/_8ssp"
-                android:layout_marginTop="@dimen/_20ssp"
+
                 android:scaleType="centerCrop"
                 android:src="@drawable/login_image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,26 +38,26 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/mUsernameTv"
+                android:id="@+id/mEmailTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/username"
+                android:text="@string/Mail"
                 android:textColor="@color/primary"
                 android:textSize="@dimen/_15ssp"
                 android:layout_marginStart="@dimen/_5ssp"
-                app:layout_constraintStart_toStartOf="@+id/mUsernameEt"
+                app:layout_constraintStart_toStartOf="@+id/mEmailLayout"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/mUsernameEt"
+                android:id="@+id/mEmailLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_35ssp"
                 android:layout_marginEnd="@dimen/_35ssp"
-                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginTop="@dimen/_10ssp"
                 android:textColorHint="@color/primary"
-                app:boxBackgroundColor="@color/grayLight"
+                app:boxBackgroundColor="@color/whiteBack"
                 app:boxCornerRadiusBottomEnd="@dimen/_10ssp"
                 app:boxCornerRadiusBottomStart="@dimen/_10ssp"
                 app:boxCornerRadiusTopEnd="@dimen/_10ssp"
@@ -65,9 +65,10 @@
                 app:hintTextColor="@color/teal_700"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mUsernameTv">
+                app:layout_constraintTop_toBottomOf="@+id/mEmailTv">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mEmailEt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
@@ -82,19 +83,20 @@
                 android:textColor="@color/primary"
                 android:textSize="@dimen/_15ssp"
                 android:layout_marginStart="@dimen/_5ssp"
-                app:layout_constraintStart_toStartOf="@+id/mPasswordEt"
-                app:layout_constraintTop_toBottomOf="@+id/mUsernameEt" />
+                android:layout_marginTop="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@+id/mPasswordLayout"
+                app:layout_constraintTop_toBottomOf="@+id/mEmailLayout" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/mPasswordEt"
+                android:id="@+id/mPasswordLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_35ssp"
-                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginTop="@dimen/_10ssp"
                 android:layout_marginEnd="@dimen/_35ssp"
                 android:textColorHint="@color/primary"
-                app:boxBackgroundColor="@color/grayLight"
+                app:boxBackgroundColor="@color/whiteBack"
                 app:boxCornerRadiusBottomEnd="@dimen/_10ssp"
                 app:boxCornerRadiusBottomStart="@dimen/_10ssp"
                 app:boxCornerRadiusTopEnd="@dimen/_10ssp"
@@ -105,6 +107,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/mPasswordTv">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mPasswordEt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
@@ -128,7 +131,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mPasswordEt" />
+                app:layout_constraintTop_toBottomOf="@+id/mPasswordLayout" />
             <TextView
                 android:id="@+id/mForgetPassTv"
                 android:layout_width="wrap_content"
