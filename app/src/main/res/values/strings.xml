@@ -7,4 +7,11 @@
     <string name="Mail">E-Mail</string>
     <string name="login">Login</string>
     <string name="forget_password"><u>Forget Password ?</u></string>
+    <string name="add_teacher">Add teacher</string>
+    <string name="add_student">Add student</string>
+    <string name="show_teacher_table">Show teacher table</string>
+    <string name="show_student_table">Show student table</string>
+    <string name="welcome">Welcome...</string>
+    <string name="admin_guide">As an admin, You must record the data of steel every year, As well as the data of the teachers.</string>
+
 </resources>

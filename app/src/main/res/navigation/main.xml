@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/splash">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/splash"
@@ -36,4 +36,9 @@
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/add_teacher"
+        android:name="com.Fcih.attendance_admin.add_teacher"
+        android:label="fragment_add_teacher"
+        tools:layout="@layout/fragment_add_teacher" />
 </navigation>
