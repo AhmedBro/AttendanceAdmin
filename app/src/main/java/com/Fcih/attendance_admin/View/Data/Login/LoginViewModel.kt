@@ -1,37 +1,56 @@
 package com.Fcih.attendance_admin.View.Data.Login
 
 
-import android.app.Application
-import android.util.Log
-import android.widget.Toast
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginViewModel() : ViewModel() {
+class LoginViewModel : ViewModel() {
 
-    public fun login(email: String, password: String, application: Application , auth: FirebaseAuth) {
-        if (password.length > 5 && email.length > 5) {
+
+    private val _navigateToHome = MutableLiveData<Boolean>()
+    val navigateToHome: LiveData<Boolean>
+        get() = _navigateToHome
+
+
+    private val _showProgressbar = MutableLiveData<Boolean>()
+    val showProgressbar: LiveData<Boolean>
+        get() = _showProgressbar
+
+
+    private val _errorMessage = MutableLiveData<String>()
+    val errorMessage: LiveData<String>
+        get() = _errorMessage
+
+
+    fun doneNavigatingToHome() {
+        _navigateToHome.value = false
+    }
+
+
+    fun login(
+        email: String,
+        password: String,
+        auth: FirebaseAuth
+    ) {
+        if (password.isNotEmpty() && email.isNotEmpty()) {
             auth.signInWithEmailAndPassword(
                 email,
                 password
             ).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("LoginViewModel", "signInWithEmail:success")
-                    Toast.makeText(application.applicationContext, "success", Toast.LENGTH_SHORT)
-                        .show()
-
+                    _navigateToHome.value = true
+                    _showProgressbar.value = false
                 } else {
-                    Log.d("LoginViewModel", "signInWithEmail:failed")
-                    Toast.makeText(application.applicationContext, "fail", Toast.LENGTH_SHORT)
-                        .show()
+                    _showProgressbar.value = false
+                    _errorMessage.value = task.exception?.localizedMessage ?: "Wrong e-mail or password"
                 }
             }
 
         } else {
-            Toast.makeText(application.applicationContext, "invalid input", Toast.LENGTH_SHORT)
-                .show()
+            _errorMessage.value = "E-mail or password can't be empty"
+            _showProgressbar.value = false
         }
     }
-
 }
