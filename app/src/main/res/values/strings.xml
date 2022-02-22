@@ -7,6 +7,9 @@
     <string name="Mail">E-Mail</string>
     <string name="login">Login</string>
     <string name="forget_password"><u>Forget Password ?</u></string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="email">Email</string>
+    <string name="submit">submit</string>
     <string name="add_teacher">Add teacher</string>
     <string name="add_student">Add student</string>
     <string name="show_teacher_table">Show teacher table</string>
@@ -15,6 +18,5 @@
     <string name="admin_guide">As an admin, You must record the data of steel every year, As well as the data of the teachers.</string>
     <string name="username">Username</string>
     <string name="forgotten_password">Forgotten password?</string>
-
 
 </resources>
