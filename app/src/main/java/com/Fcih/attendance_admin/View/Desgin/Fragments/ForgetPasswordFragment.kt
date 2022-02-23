@@ -47,6 +47,8 @@ class ForgetPasswordFragment : Fragment(R.layout.fragment_forget_password) {
                         Toast.makeText(this.context,"email sent successfully ",Toast.LENGTH_LONG).show()
 
                         // Action to Login Fragment
+                        var action=ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment()
+                        mNavController.navigate(action)
 
 //                        var action = ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment2()
 //                        mNavController.navigate(action)
