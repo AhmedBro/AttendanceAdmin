@@ -49,5 +49,9 @@
         android:id="@+id/forgetPasswordFragment"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.ForgetPasswordFragment"
         android:label="fragment_forget_password"
-        tools:layout="@layout/fragment_forget_password" />
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>
