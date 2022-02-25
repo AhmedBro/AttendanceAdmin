@@ -43,6 +43,7 @@ class ForgetPasswordFragment : Fragment(R.layout.fragment_forget_password) {
         forgetPasswordViewModel.isSuccess.observe(viewLifecycleOwner, Observer {
             if (it) {
                 mNavController.navigate(ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment())
+                forgetPasswordViewModel.done()
             }
         })
 

@@ -21,6 +21,7 @@ class ForgetPasswordViewModel : ViewModel() {
             auth.sendPasswordResetEmail(email).addOnCompleteListener {
                 if (it.isSuccessful) {
                     _isSuccess.value = true
+                    _error.value="Success"
                 }else{
                     _error.value= it.exception?.message
                 }
@@ -29,5 +30,8 @@ class ForgetPasswordViewModel : ViewModel() {
         }else{
             _error.value=" empty E-mail , you have to enter an E-mail"
         }
+    }
+    fun done(){
+        _isSuccess.value=false
     }
 }
