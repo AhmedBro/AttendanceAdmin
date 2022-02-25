@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -38,9 +39,16 @@ class ForgetPasswordFragment : Fragment(R.layout.fragment_forget_password) {
                 view.findViewById<EditText>(R.id.mEnterEmailEt).text.toString().trim { it <= ' ' }
             forgetPasswordViewModel.forgetPassword(email, auth)
         }
+
         forgetPasswordViewModel.isSuccess.observe(viewLifecycleOwner, Observer {
             if (it) {
                 mNavController.navigate(ForgetPasswordFragmentDirections.actionForgetPasswordFragmentToLoginFragment())
+            }
+        })
+
+        forgetPasswordViewModel.error.observe(viewLifecycleOwner, Observer {
+            if (it.isNotEmpty()){
+                Toast.makeText(this.context,it,Toast.LENGTH_SHORT).show()
             }
         })
 

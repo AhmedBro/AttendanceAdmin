@@ -10,6 +10,10 @@ class ForgetPasswordViewModel : ViewModel() {
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean>
         get() = _isSuccess
+    private val _error = MutableLiveData<String>()
+    val error : LiveData<String>
+        get() = _error
+
 
     fun forgetPassword(email: String, auth: FirebaseAuth) {
 
@@ -17,9 +21,13 @@ class ForgetPasswordViewModel : ViewModel() {
             auth.sendPasswordResetEmail(email).addOnCompleteListener {
                 if (it.isSuccessful) {
                     _isSuccess.value = true
+                }else{
+                    _error.value= it.exception?.message
                 }
             }
 
+        }else{
+            _error.value=" empty E-mail , you have to enter an E-mail"
         }
     }
 }
