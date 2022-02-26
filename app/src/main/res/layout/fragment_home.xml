@@ -4,25 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.Desgin.Fragments.HomeFragment"
     android:background="@color/white"
-    >
+    tools:context=".View.Desgin.Fragments.HomeFragment">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/logo"
-        android:layout_width="401dp"
-        android:layout_height="357dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300ssp"
+        android:layout_margin="@dimen/_10ssp"
+        android:background="@drawable/selector3"
         android:foregroundGravity="center_horizontal"
         android:src="@drawable/logo_admin"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:riv_corner_radius="@dimen/_15ssp"
         app:shapeAppearanceOverlay="@style/RoundedSquare" />
 
     <androidx.appcompat.widget.AppCompatButton

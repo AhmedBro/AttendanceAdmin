@@ -27,7 +27,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="0dp"
-                android:layout_height="300dp"
+                android:layout_height="@dimen/_300ssp"
                 android:layout_marginStart="@dimen/_8ssp"
                 android:layout_marginEnd="@dimen/_8ssp"
                 android:scaleType="centerCrop"
@@ -43,7 +43,7 @@
                 android:layout_marginStart="@dimen/_5ssp"
                 android:text="@string/Mail"
                 android:textColor="@color/primary"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintStart_toStartOf="@+id/mEmailLayout"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -79,10 +79,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5ssp"
-                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_marginTop="@dimen/_15ssp"
                 android:text="@string/password"
                 android:textColor="@color/primary"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintStart_toStartOf="@+id/mPasswordLayout"
                 app:layout_constraintTop_toBottomOf="@+id/mEmailLayout" />
 
@@ -151,12 +151,13 @@
                 android:id="@+id/mForgetPassTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5ssp"
+                android:layout_marginTop="@dimen/_10ssp"
                 android:clickable="true"
                 android:focusable="true"
                 android:text="@string/forgotten_password"
                 android:textColor="@color/primary"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_10ssp"
+
                 app:layout_constraintEnd_toEndOf="@+id/mLoginBtn"
                 app:layout_constraintTop_toBottomOf="@+id/mLoginBtn" />
 
