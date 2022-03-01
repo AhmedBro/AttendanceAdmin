@@ -37,28 +37,45 @@
         android:id="@+id/mShowTeachersTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15ssp"
         android:layout_marginTop="@dimen/_15ssp"
+        android:layout_marginEnd="@dimen/_15ssp"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/show_teacher_table"
+        android:text="@string/teachers"
         android:textAlignment="center"
         android:textColor="@color/primary"
         android:textSize="@dimen/_15ssp"
-        app:layout_constraintBottom_toTopOf="@+id/mTeacherList"
+        app:layout_constraintBottom_toTopOf="@+id/mAddTeacherTv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mBackView" />
+
+    <TextView
+        android:id="@+id/mAddTeacherTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15ssp"
+        android:layout_marginTop="@dimen/_5ssp"
+        android:layout_marginEnd="@dimen/_15ssp"
+        android:text="@string/add_new_teacher"
+        android:textAlignment="textEnd"
+        android:textColor="@color/primary"
+        app:layout_constraintBottom_toTopOf="@+id/mTeacherList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mShowTeachersTv" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mTeacherList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_15ssp"
         android:paddingStart="@dimen/_5ssp"
         android:paddingEnd="@dimen/_5ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mShowTeachersTv"
+        app:layout_constraintTop_toBottomOf="@+id/mAddTeacherTv"
         tools:listitem="@layout/list_item_teacher_view" />
 
 
