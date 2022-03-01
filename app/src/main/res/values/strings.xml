@@ -18,5 +18,9 @@
     <string name="admin_guide">As an admin, You must record the data of steel every year, As well as the data of the teachers.</string>
     <string name="username">Username</string>
     <string name="forgotten_password">Forgotten password?</string>
+    <string name="teacher_name">Teacher Name:</string>
+    <string name="teacher_code">Teacher Code:</string>
+    <string name="addcourse_btn">Add Course</string>
+    <string name="show_teacher">Show Teachers</string>
 
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    app:startDestination="@id/splash">
+    app:startDestination="@id/add_teacher2">
 
     <fragment
         android:id="@+id/splash"
@@ -52,7 +52,11 @@
         tools:layout="@layout/fragment_forget_password" >
         <action
             android:id="@+id/action_forgetPasswordFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment" />
+            app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/add_teacher2"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.add_teacher"
+        android:label="add_teacher"
+        tools:layout="@layout/fragment_add_teacher"/>
 </navigation>

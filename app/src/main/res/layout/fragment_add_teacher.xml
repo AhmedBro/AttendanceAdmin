@@ -1,6 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    />
+    android:background="@color/white" >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/logo"
+        android:layout_width="391dp"
+        android:layout_height="333dp"
+        android:layout_margin="@dimen/_10ssp"
+        android:background="@drawable/selector3"
+        android:foregroundGravity="center_horizontal"
+        android:src="@drawable/logo_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_15ssp"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+    <EditText
+        android:id="@+id/edit_teacher_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35ssp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_35ssp"
+        android:background="@drawable/edit_text_forget_password"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_10ssp"
+        android:textColor="@color/black"
+        android:textColorHint="#808382"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teach_name" />
+
+    <TextView
+        android:id="@+id/teacher_code"
+        android:text="@string/teacher_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+
+        android:textAllCaps="false"
+        android:textColor="@color/primary"
+
+        android:textSize="@dimen/_13ssp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_teacher_name" />
+
+    <EditText
+        android:id="@+id/edit_teacher_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35ssp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/_35ssp"
+        android:background="@drawable/edit_text_forget_password"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_10ssp"
+        android:textColor="@color/black"
+        android:textColorHint="#808382"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_code" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="315dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="@dimen/_35ssp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="@dimen/_35ssp"
+        android:background="@drawable/selector3"
+        android:text="@string/addcourse_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_teacher_code" />
+
+    <TextView
+        android:id="@+id/mForgetPassTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/show_teacher"
+
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/teach_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/teacher_name"
+        android:textSize="@dimen/_13ssp"
+        android:textColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
