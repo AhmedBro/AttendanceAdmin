@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import androidx.navigation.fragment.findNavController
 import com.Fcih.attendance_admin.R
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
 
@@ -18,19 +19,14 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-
-        val show_btn = view.findViewById<AppCompatButton>(R.id.show_teach_tbl)
-
-        show_btn.setOnClickListener {
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTeacherListFragment())
-        }
-
-
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        add_teach.setOnClickListener {
+            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTeacherListFragment2())
+        }
 
     }
 
