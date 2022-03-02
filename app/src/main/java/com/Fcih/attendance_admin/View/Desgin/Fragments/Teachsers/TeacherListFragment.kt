@@ -1,4 +1,4 @@
-package com.Fcih.attendance_admin.View.Desgin.Fragments
+package com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,12 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
 import com.Fcih.attendance_admin.View.Data.TeacherList.Teacher
-import com.Fcih.attendance_admin.View.Data.TeacherList.TeacherAdapter
 import com.Fcih.attendance_admin.View.Data.TeacherList.TeacherListViewModel
 
 class TeacherListFragment : Fragment() {

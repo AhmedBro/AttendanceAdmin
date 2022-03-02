@@ -25,55 +25,56 @@
         android:id="@+id/add_teach"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
-        android:layout_marginBottom="8dp"
         android:height="@dimen/btn_height"
         android:background="@drawable/selector1"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/add_teacher"
+        android:text="@string/teachers"
         android:textAllCaps="false"
-
+        android:layout_marginBottom="@dimen/_28ssp"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/add_stu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/add_stu"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/selector2"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/add_student"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/show_teac_tbl"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_28ssp"
 
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_teach" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/show_teac_tbl"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_height"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/selector3"
-        android:text="@string/show_teacher_table"
+        android:text="@string/Courses"
         android:textAllCaps="false"
         android:textSize="16sp"
+        android:layout_marginBottom="@dimen/_28ssp"
+
         app:layout_constraintBottom_toTopOf="@+id/show_teach_tbl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_stu" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/show_teach_tbl"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/btn_height"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="@dimen/_28ssp"
         android:width="@dimen/btn_width"
         android:background="@drawable/selector4"
         android:text="@string/show_teacher_table"
@@ -81,8 +82,8 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_teac_tbl" />
 
     <TextView
         android:id="@+id/textView"
@@ -98,6 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="267dp"
         android:layout_height="73dp"
         android:layout_marginTop="28dp"

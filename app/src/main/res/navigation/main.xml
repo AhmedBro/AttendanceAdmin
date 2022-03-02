@@ -68,7 +68,7 @@
         tools:layout="@layout/fragment_add_students" />
     <fragment
         android:id="@+id/teacherListFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.TeacherListFragment"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.TeacherListFragment"
         android:label="fragment_teacher_list"
         tools:layout="@layout/fragment_teacher_list" />
 </navigation>

@@ -1,12 +1,12 @@
-package com.Fcih.attendance_admin.View.Data.TeacherList
+package com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
+import com.Fcih.attendance_admin.View.Data.TeacherList.Teacher
 import kotlinx.android.synthetic.main.list_item_teacher_view.view.*
 
 
