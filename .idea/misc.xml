@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Project/Fcih/AttendanceAdmin/app/src/main/res/layout/fragment_add_teacher.xml" value="0.18645833333333334" />
+        <entry key="..\:/Android Project/Fcih/AttendanceAdmin/app/src/main/res/layout/fragment_home.xml" value="0.18645833333333334" />
         <entry key="..\:/Android Project/Fcih/AttendanceAdmin/app/src/main/res/layout/fragment_login.xml" value="0.18645833333333334" />
         <entry key="..\:/Android Project/Fcih/AttendanceAdmin/app/src/main/res/layout/fragment_splash.xml" value="0.16" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/drawable/edit_text_login.xml" value="0.32009132420091324" />
@@ -11,21 +13,10 @@
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_home.xml" value="0.33489583333333334" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/Attendance/Admin/app/src/main/res/layout/fragment_splash.xml" value="0.18" />
-        <entry key="..\:/GP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/button_forget_password.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/edit_text_forget_password.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/edit_text_login.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/round_btn.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/selector1.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/selector2.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/selector3.xml" value="0.2703125" />
-        <entry key="..\:/GP/app/src/main/res/drawable/selector4.xml" value="0.2703125" />
         <entry key="..\:/GP/app/src/main/res/layout/activity_main.xml" value="0.23822463768115942" />
-        <entry key="..\:/GP/app/src/main/res/layout/fragment_add_students.xml" value="0.264" />
         <entry key="..\:/GP/app/src/main/res/layout/fragment_add_teacher.xml" value="0.23822463768115942" />
-        <entry key="..\:/GP/app/src/main/res/layout/fragment_forget_password.xml" value="0.264" />
-        <entry key="..\:/GP/app/src/main/res/layout/fragment_home.xml" value="0.536" />
+        <entry key="..\:/GP/app/src/main/res/layout/fragment_forget_password.xml" value="0.1793478260869565" />
+        <entry key="..\:/GP/app/src/main/res/layout/fragment_home.xml" value="0.23822463768115942" />
         <entry key="..\:/GP/app/src/main/res/layout/fragment_login.xml" value="0.1793478260869565" />
         <entry key="..\:/GP/app/src/main/res/layout/fragment_splash.xml" value="0.23822463768115942" />
       </map>
