@@ -21,5 +21,6 @@
     <string name="year">Year</string>
     <string name="first_id">First ID</string>
     <string name="add">Add</string>
-
+    <string name="teachers">Teachers</string>
+    <string name="add_new_teacher"><u>+Add teacher</u></string>
 </resources>

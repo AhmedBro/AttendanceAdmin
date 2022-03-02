@@ -44,11 +44,13 @@
         android:id="@+id/homeFragment"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_addStudentsFragment"
-            app:destination="@id/addStudentsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
+    <action
+        android:id="@+id/action_homeFragment_to_addStudentsFragment"
+        app:destination="@id/addStudentsFragment" />
+    <action
+        android:id="@+id/action_homeFragment_to_teacherListFragment"
+        app:destination="@id/teacherListFragment" />
     <fragment
         android:id="@+id/forgetPasswordFragment"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.ForgetPasswordFragment"
@@ -64,4 +66,9 @@
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.AddStudentsFragment"
         android:label="fragment_add_students"
         tools:layout="@layout/fragment_add_students" />
+    <fragment
+        android:id="@+id/teacherListFragment"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.TeacherListFragment"
+        android:label="fragment_teacher_list"
+        tools:layout="@layout/fragment_teacher_list" />
 </navigation>
