@@ -25,11 +25,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         add_teach.setOnClickListener {
-            this.findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTeacherListFragment2())
+            this.findNavController()
+                .navigate(HomeFragmentDirections.actionHomeFragmentToTeacherListFragment2())
         }
-
+        mAddStudent.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddStudentsFragment2())
+        }
     }
-
 
 
     companion object {
