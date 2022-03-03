@@ -78,6 +78,6 @@
     </fragment>
     <fragment
         android:id="@+id/add_teacher"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.add_teacher"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.AddTeacher"
         android:label="add_teacher" />
 </navigation>
