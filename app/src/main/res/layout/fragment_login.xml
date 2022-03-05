@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:theme="@style/Theme.MaterialComponents.Bridge"
-    tools:context=".View.Desgin.Fragments.LoginFragment">
+    tools:context=".Desgin.Fragments.LoginFragment">
 
     <ScrollView
         android:layout_width="match_parent"

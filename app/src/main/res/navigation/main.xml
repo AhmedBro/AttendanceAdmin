@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splash"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Splash"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Splash"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.LoginFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
 
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.HomeFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -57,7 +57,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.ForgetPasswordFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.ForgetPasswordFragment"
         android:label="fragment_forget_password"
         tools:layout="@layout/fragment_forget_password" >
         <action
@@ -67,12 +67,12 @@
     </fragment>
     <fragment
         android:id="@+id/addStudentsFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.AddStudentsFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.AddStudentsFragment"
         android:label="fragment_add_students"
         tools:layout="@layout/fragment_add_students" />
     <fragment
         android:id="@+id/teacherListFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.TeacherListFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.TeacherListFragment"
         android:label="fragment_teacher_list"
         tools:layout="@layout/fragment_teacher_list" >
         <action
@@ -81,12 +81,12 @@
     </fragment>
     <fragment
         android:id="@+id/add_teacher"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.AddTeacher"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.AddTeacher"
         android:label="add_teacher"
         tools:layout="@layout/fragment_add_teacher"/>
     <fragment
         android:id="@+id/courseListFragment"
-        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Courses.CourseListFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListFragment"
         android:label="CourseListFragment"
         tools:layout="@layout/fragment_course_list"/>
 </navigation>
