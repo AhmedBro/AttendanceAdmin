@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
@@ -60,9 +61,9 @@ class TeacherListFragment : Fragment() {
 
         var addTeacherTv = view?.findViewById<TextView>(R.id.mAddTeacherTv)
         addTeacherTv?.setOnClickListener {
-//            Navigation.findNavController(this.requireView())
-//                .navigate()
-            Toast.makeText(application, "Clicked", Toast.LENGTH_SHORT).show()
+            Navigation.findNavController(this.requireView())
+                .navigate(TeacherListFragmentDirections.actionTeacherListFragmentToAddTeacher())
+//            Toast.makeText(application, "Clicked", Toast.LENGTH_SHORT).show()
         }
 
         return view

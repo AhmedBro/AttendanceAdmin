@@ -31,6 +31,10 @@ class HomeFragment : Fragment() {
         mAddStudent.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddStudentsFragment2())
         }
+        add_course.setOnClickListener {
+            this.findNavController()
+                .navigate(HomeFragmentDirections.actionHomeFragmentToCourseListFragment())
+        }
     }
 
 

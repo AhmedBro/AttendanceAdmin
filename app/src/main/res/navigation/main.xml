@@ -51,6 +51,9 @@
         <action
             android:id="@+id/action_homeFragment_to_teacherListFragment2"
             app:destination="@id/teacherListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_courseListFragment"
+            app:destination="@id/courseListFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
@@ -79,5 +82,11 @@
     <fragment
         android:id="@+id/add_teacher"
         android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Teachsers.AddTeacher"
-        android:label="add_teacher" />
+        android:label="add_teacher"
+        tools:layout="@layout/fragment_add_teacher"/>
+    <fragment
+        android:id="@+id/courseListFragment"
+        android:name="com.Fcih.attendance_admin.View.Desgin.Fragments.Courses.CourseListFragment"
+        android:label="CourseListFragment"
+        tools:layout="@layout/fragment_course_list"/>
 </navigation>

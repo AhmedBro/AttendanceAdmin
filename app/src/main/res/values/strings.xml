@@ -20,13 +20,15 @@
     <string name="forgotten_password">Forgotten password?</string>
     <string name="teacher_name">Teacher Name:</string>
     <string name="teacher_code">Teacher Code:</string>
-    <string name="addcourse_btn">Add Course</string>
+    <string name="addcourse_btn">Add Courses</string>
     <string name="show_teacher">Show Teachers</string>
     <string name="year">Year</string>
     <string name="first_id">First ID</string>
     <string name="add">Add</string>
     <string name="teachers">Teachers</string>
     <string name="add_new_teacher"><u>+Add teacher</u></string>
+    <string name="add_new_course"><u>+Add course</u></string>
     <string name="students">Students</string>
     <string name="Courses">Courses</string>
+    <string name="courses">Courses</string>
 </resources>
