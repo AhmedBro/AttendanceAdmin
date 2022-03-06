@@ -19,11 +19,13 @@ class StudentViewModel : ViewModel() {
     val Message: LiveData<String>
         get() = _Message
 
-    suspend fun AddStudent(Student: Student, year: String) {
+    suspend fun AddStudent(Student: Student, year: String , endValue : Int) {
         InitFireStore.instance.collection(Constants.STUDENTS_TABLE).document(year)
             .collection(Student.StudentID!!).document(Constants.STUDENT_PERSONAL_DATA)
             .set(Student).addOnSuccessListener {
-                _showProgressbar.value = false
+                if (Integer.parseInt(Student.StudentID) == endValue){
+                    _showProgressbar.value = false
+                }
                 _Message.value = "student Added Successfully"
             }
             .addOnFailureListener {

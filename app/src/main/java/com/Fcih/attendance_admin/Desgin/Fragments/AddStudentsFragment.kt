@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.Fcih.attendance_admin.Data.Login.LoginViewModel
@@ -32,18 +33,25 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
         AddStudents = ViewModelProvider(this).get(StudentViewModel::class.java)
 
         mAddStudents.setOnClickListener {
+            mLoadingAddStudent.visibility = View.VISIBLE
             if (Validate()) {
                 mStartValue = Integer.parseInt(mFirdtIdEt.text.toString())
                 mEndValue = Integer.parseInt(mLastIdEt.text.toString())
                 lifecycleScope.launch(Dispatchers.IO) {
                     for (i in mStartValue!!..mEndValue!!) {
                         student = Student(i.toString(), i.toString())
-                        AddStudents.AddStudent(student, mYearEt.text.toString())
+                        AddStudents.AddStudent(student, mYearEt.text.toString() , mEndValue!!)
                     }
 
                 }
             }
         }
+
+        AddStudents.showProgressbar.observe(viewLifecycleOwner , Observer {
+            if (!it){
+                mLoadingAddStudent.visibility = View.INVISIBLE
+            }
+        })
 
     }
 
