@@ -44,6 +44,8 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
                     }
 
                 }
+            }else{
+                mLoadingAddStudent.visibility = View.INVISIBLE
             }
         }
 
@@ -66,7 +68,10 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
         } else if (mYearEt.text.toString().isEmpty()) {
             Toast.makeText(activity, "Please enter Academic Year", Toast.LENGTH_LONG).show()
             return false
-        } else return true
+        }else if (Integer.parseInt(mFirdtIdEt.text.toString()) > Integer.parseInt(mLastIdEt.text.toString())) {
+            Toast.makeText(activity, "First id can not be smaller than Last id", Toast.LENGTH_LONG).show()
+            return false
+        }else return true
 
     }
 }
