@@ -45,13 +45,17 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
 
                 }
             }else{
-                mLoadingAddStudent.visibility = View.INVISIBLE
+                mLoadingAddStudent.visibility = View.GONE
             }
         }
 
         AddStudents.showProgressbar.observe(viewLifecycleOwner , Observer {
             if (!it){
-                mLoadingAddStudent.visibility = View.INVISIBLE
+                mLoadingAddStudent.visibility = View.GONE
+                mFirdtIdEt.text.clear()
+                mYearEt.text.clear()
+                mLastIdEt.text.clear()
+                Toast.makeText(activity , "All Students were Added" , Toast.LENGTH_LONG).show()
             }
         })
 
