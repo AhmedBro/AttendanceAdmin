@@ -7,5 +7,8 @@ class Constants {
         val COURSES_TABLE = "Courses"
         val TEACHER_TABLE = "Teachers"
         val STUDENT_PERSONAL_DATA ="PersonalData"
+        val ASSIGNET_COURSE="Assigned"
+        val UNASSIGNET_COURSE="Unassigned"
+        val COURSE_DATA="Course data"
     }
 }

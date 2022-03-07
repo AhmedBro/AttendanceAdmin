@@ -31,4 +31,9 @@
     <string name="students">Students</string>
     <string name="Courses">Courses</string>
     <string name="courses">Courses</string>
+    <string-array name="Groups">
+        <item> Group 1</item>
+        <item> Group 2</item>
+    </string-array>
+
 </resources>
