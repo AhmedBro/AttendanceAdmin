@@ -93,5 +93,14 @@
         android:id="@+id/courseListFragment"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListFragment"
         android:label="CourseListFragment"
-        tools:layout="@layout/fragment_course_list"/>
+        tools:layout="@layout/fragment_course_list">
+        <action
+            android:id="@+id/action_courseListFragment_to_addCourseFragment"
+            app:destination="@id/addCourseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCourseFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.AddCourseFragment"
+        android:label="fragment_add_course"
+        tools:layout="@layout/fragment_add_course" />
 </navigation>

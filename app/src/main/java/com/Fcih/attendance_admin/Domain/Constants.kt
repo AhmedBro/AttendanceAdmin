@@ -9,6 +9,6 @@ class Constants {
         val STUDENT_PERSONAL_DATA ="PersonalData"
         val ASSIGNET_COURSE="Assigned"
         val UNASSIGNET_COURSE="Unassigned"
-        val COURSE_DATA="Course data"
+        val COURSE_DATA="CourseData"
     }
 }

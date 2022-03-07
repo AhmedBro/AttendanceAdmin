@@ -27,8 +27,8 @@ class CourseAdapter() :
         holder.apply {
             courseCode.text = getItem(position).courseCode
             courseName.text = getItem(position).courseName
-            courseDay.text = getItem(position).courseDay
-            courseTime.text = getItem(position).courseTime
+            courseDay.text = getItem(position).courseDate
+            courseTime.text = getItem(position).courseDate
             coursePlace.text = getItem(position).coursePlace
             itemView.setOnClickListener {
                 onItemClickListener?.let { it(getItem(position)) }
