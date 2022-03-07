@@ -83,7 +83,12 @@
         android:id="@+id/add_teacher"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.AddTeacher"
         android:label="add_teacher"
-        tools:layout="@layout/fragment_add_teacher"/>
+        tools:layout="@layout/fragment_add_teacher">
+        <action
+            android:id="@+id/action_add_teacher_to_teacherListFragment"
+            app:destination="@id/teacherListFragment"
+            app:popUpTo="@id/teacherListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/courseListFragment"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListFragment"

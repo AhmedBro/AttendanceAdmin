@@ -19,7 +19,7 @@ class StudentViewModel : ViewModel() {
     val Message: LiveData<String>
         get() = _Message
 
-     fun AddStudent(Student: Student, year: String , endValue : Int) {
+    fun AddStudent(Student: Student, year: String , endValue : Int) {
         InitFireStore.instance.collection(Constants.STUDENTS_TABLE).document(year)
             .collection(Student.StudentID!!).document(Constants.STUDENT_PERSONAL_DATA)
             .set(Student).addOnSuccessListener {
