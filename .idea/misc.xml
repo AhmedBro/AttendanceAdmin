@@ -22,6 +22,9 @@
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/fragment_teacher_list.xml" value="0.1962962962962963" />
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/list_item_course_view.xml" value="0.5" />
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/list_item_teacher_view.xml" value="0.1685185185185185" />
+        <entry key="..\:/GP/app/src/main/res/drawable/edit_text_forget_password.xml" value="0.15798045602605862" />
+        <entry key="..\:/GP/app/src/main/res/layout/fragment_add_course.xml" value="0.152" />
+        <entry key="..\:/GP/app/src/main/res/layout/fragment_login.xml" value="0.11499493414387031" />
       </map>
     </option>
   </component>
