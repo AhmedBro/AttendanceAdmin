@@ -102,5 +102,10 @@
         android:id="@+id/addCourseFragment"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.AddCourseFragment"
         android:label="fragment_add_course"
-        tools:layout="@layout/fragment_add_course" />
+        tools:layout="@layout/fragment_add_course" >
+        <action
+            android:id="@+id/action_addCourseFragment_to_homeFragment2"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>
