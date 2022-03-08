@@ -21,7 +21,7 @@ class StudentViewModel : ViewModel() {
 
     fun AddStudent(Student: Student, year: String , endValue : Int) {
         InitFireStore.instance.collection(Constants.STUDENTS_TABLE).document(year)
-            .collection(Student.StudentID!!).document(Constants.STUDENT_PERSONAL_DATA)
+            .collection(Constants.STUDENT_DATA).document(Student.StudentID!!)
             .set(Student).addOnSuccessListener {
                 if (Integer.parseInt(Student.StudentID) == endValue){
                     _showProgressbar.value = false

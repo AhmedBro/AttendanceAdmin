@@ -21,7 +21,6 @@ class AddTeacherViewModel() : ViewModel() {
     fun addTeacher(teacher: Teacher) {
         ioScope.launch {
             InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(teacher.teacherName + teacher.id)
-                .collection(teacher.id).document(Constants.STUDENT_PERSONAL_DATA)
                 .set(teacher).addOnSuccessListener {
                     _showProgressbar.value = false
                 }

@@ -74,14 +74,14 @@ class CourseListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       InitFireStore.instance.collection(Constants.TEACHER_TABLE)
+        InitFireStore.instance.collection(Constants.STUDENTS_TABLE).document("2018").collection(Constants.STUDENT_DATA)
             .get()
             .addOnSuccessListener { result ->
-
-                Log.e("Adminnnnnnnnnnnnnnnnn", "${result.documents.size}")
-
                 for (document in result) {
+                    Log.e("Adminnnnnnnnnnnnnnnnn", "${document.id} => ${document.data.get("studentID")}")
                 }
+
+
             }
             .addOnFailureListener { exception ->
                 Log.e("Adminnnnnnnnnnnnnnnnn", "Error getting documents: ", exception)
