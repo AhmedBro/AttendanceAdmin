@@ -15,12 +15,14 @@ import androidx.navigation.fragment.findNavController
 import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.Data.CourseList.CourseListViewModel
 import com.Fcih.attendance_admin.Data.CourseList.CourseViewModel
+import com.Fcih.attendance_admin.Data.CourseList.Lectuers
 import com.Fcih.attendance_admin.R
 import kotlinx.android.synthetic.main.fragment_add_course.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
@@ -31,6 +33,8 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
     private val timeFormatter = SimpleDateFormat("hh:mm a", Locale.US)
     var calendar: Calendar? = null
     private val dateFormatter = SimpleDateFormat("E", Locale.US)
+    val Lectuers: ArrayList<String> = ArrayList()
+    val Lectuers2: ArrayList<Lectuers> = ArrayList()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,7 +59,15 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
             var courseStartTime = mStartTimeEt.text.toString()
             var courseEndTime = mEndTimeEt.text.toString()
             var coursePlace = mCoursePlaceEt.text.toString()
+            Lectuers.add("Ahmed")
+            Lectuers.add("Mohame")
 
+            Lectuers.add("ali")
+
+            Lectuers.add("Ahmed")
+
+            Lectuers.add("Ahmed")
+            Lectuers2.add(Lectuers("Tests1", Lectuers))
             if (Validate()) {
                 mAddCourseProgressBar.visibility = View.VISIBLE
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -67,7 +79,8 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
                             courseStartTime,
                             courseEndTime,
                             coursePlace,
-                            courseGroup
+                            courseGroup,
+                            Lectuers2
                         )
                     )
 

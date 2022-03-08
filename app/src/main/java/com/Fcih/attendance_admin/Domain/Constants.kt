@@ -10,5 +10,8 @@ class Constants {
         val ASSIGNET_COURSE="Assigned"
         val UNASSIGNET_COURSE="Unassigned"
         val COURSE_DATA="CourseData"
+        val LECTURES="lectures"
+        val TEACHER_COURSES = "Courses"
+
     }
 }

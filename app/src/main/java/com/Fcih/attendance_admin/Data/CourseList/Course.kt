@@ -7,5 +7,6 @@ data class Course(
     var courseTimeFrom: String,
     var courseTimeTo: String,
     var coursePlace: String,
-    var courseGroup: String
+    var courseGroup: String,
+    var Lectuers:ArrayList<Lectuers>
 )

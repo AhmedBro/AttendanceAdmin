@@ -33,7 +33,7 @@ class AddTeacher : Fragment(R.layout.fragment_add_teacher) {
                 var teacherName = edit_teacher_name.text.toString()
                 var teacherCode = edit_teacher_code.text.toString()
 
-                addTeacherViewModel.addTeacher(Teacher(teacherCode, teacherName, teacherCode))
+                addTeacherViewModel.addTeacher(Teacher(teacherCode, teacherName, teacherCode , null))
 
             } else {
                 mAddTeacherProgressBar.visibility = View.GONE

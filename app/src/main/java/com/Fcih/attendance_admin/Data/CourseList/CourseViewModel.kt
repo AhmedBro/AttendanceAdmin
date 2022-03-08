@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
 
-class CourseViewModel:ViewModel( ) {
+class CourseViewModel:ViewModel() {
     private val _showProgressbar = MutableLiveData<Boolean>()
     val showProgressbar: LiveData<Boolean>
         get() = _showProgressbar

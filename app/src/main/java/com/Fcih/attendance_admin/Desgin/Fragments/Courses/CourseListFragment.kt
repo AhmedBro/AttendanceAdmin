@@ -74,11 +74,11 @@ class CourseListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        InitFireStore.instance.collection(Constants.STUDENTS_TABLE).document("2018").collection(Constants.STUDENT_DATA)
+        InitFireStore.instance.collection(Constants.COURSES_TABLE)
             .get()
             .addOnSuccessListener { result ->
                 for (document in result) {
-                    Log.e("Adminnnnnnnnnnnnnnnnn", "${document.id} => ${document.data.get("studentID")}")
+                    Log.e("Adminnnnnnnnnnnnnnnnn", "${document.data.get("lectuers")}")
                 }
 
 
