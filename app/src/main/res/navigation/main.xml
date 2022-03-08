@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_teacherListFragment_to_add_teacher"
             app:destination="@id/add_teacher" />
+        <action
+            android:id="@+id/action_teacherListFragment_to_showTeacherTableFragment"
+            app:destination="@id/showTeacherTableFragment" />
     </fragment>
     <fragment
         android:id="@+id/add_teacher"
@@ -108,4 +111,9 @@
             app:destination="@id/homeFragment"
             app:popUpToInclusive="false" />
     </fragment>
+    <fragment
+        android:id="@+id/showTeacherTableFragment"
+        android:name="com.Fcih.attendance_admin.ShowTeacherTableFragment"
+        android:label="fragment_show_teacher_table"
+        tools:layout="@layout/fragment_show_teacher_table" />
 </navigation>
