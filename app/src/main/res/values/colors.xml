@@ -17,5 +17,7 @@
     <color name="green4">#25A47E</color>
     <color name="green_pressed">#1B473A</color>
     <color name="whiteBack">#E5E5E5</color>
+    <color name="go_btn">#FFC107</color>
+
 
 </resources>
