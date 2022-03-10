@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_add_teacher.*
 class AddTeacher : Fragment(R.layout.fragment_add_teacher) {
 
 
-    lateinit var addTeacherViewModel: AddTeacherViewModel
+
     var teacherName: String? = null
     var teacherCode: String? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -69,6 +69,9 @@ class AddTeacher : Fragment(R.layout.fragment_add_teacher) {
             return false
         } else return true
 
+    }
+    companion object{
+        lateinit var addTeacherViewModel: AddTeacherViewModel
     }
 
 }

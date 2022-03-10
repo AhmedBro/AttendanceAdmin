@@ -1,9 +1,11 @@
 package com.Fcih.attendance_admin.Data.TeacherList
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.Fcih.attendance_admin.Desgin.Activities.MainActivity
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
 import com.google.firebase.firestore.ktx.toObject
@@ -13,8 +15,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class TeacherListViewModel : ViewModel() {
-
-
 
     private val _showProgressbar = MutableLiveData<Boolean>()
     val showProgressbar: LiveData<Boolean>
@@ -27,7 +27,6 @@ class TeacherListViewModel : ViewModel() {
     private val _showNoTeachers = MutableLiveData<Boolean>()
     val showNoTeachers: LiveData<Boolean>
         get() = _showNoTeachers
-
 
 
     fun doneRetrievingData() {
@@ -47,7 +46,7 @@ class TeacherListViewModel : ViewModel() {
     }
 
 
-    suspend fun getTeachers() : ArrayList<Teacher>{
+    suspend fun getTeachers(): ArrayList<Teacher> {
 
         var teachers = ArrayList<Teacher>()
 
@@ -68,5 +67,19 @@ class TeacherListViewModel : ViewModel() {
             }
         return teachers
     }
+
+    fun DeleteDoc(teacher: Teacher) {
+        InitFireStore.instance.collection(Constants.TEACHER_TABLE)
+            .document(teacher.teacherName + teacher.id).delete().addOnSuccessListener {
+
+                Toast.makeText(MainActivity.context , "Doctor has been deleted" , Toast.LENGTH_LONG).show()
+
+            }
+            .addOnFailureListener {
+                Toast.makeText(MainActivity.context , it.message , Toast.LENGTH_LONG).show()
+
+            }
+    }
+
 
 }

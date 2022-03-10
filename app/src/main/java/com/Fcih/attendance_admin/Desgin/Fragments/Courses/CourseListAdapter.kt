@@ -24,7 +24,8 @@ class CourseListAdapter(var allCoursesList : List<Course>?) : RecyclerView.Adapt
             mCourseName.text=allCoursesList!![position].courseName
             mCourseCode.text=allCoursesList!![position].courseCode
             mCourseDay.text=allCoursesList!![position].courseDate
-            mCourseTime.text= allCoursesList!![position].courseTimeFrom+" to "+allCoursesList!![position].courseTimeTo
+            mCourseTimeTo.text= allCoursesList!![position].courseTimeFrom
+            mCourseTimeFrom.text = allCoursesList!![position].courseTimeTo
             mCourseLocation.text=allCoursesList!![position].coursePlace
 
         }

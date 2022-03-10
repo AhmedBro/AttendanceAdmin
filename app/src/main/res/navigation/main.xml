@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_teacherListFragment_to_add_teacher"
             app:destination="@id/add_teacher" />
+        <action
+            android:id="@+id/action_teacherListFragment_to_showTeacherTableFragment"
+            app:destination="@id/showTeacherTableFragment" />
     </fragment>
     <fragment
         android:id="@+id/add_teacher"
@@ -99,6 +102,10 @@
         <action
             android:id="@+id/action_courseListFragment_to_addCourseFragment"
             app:destination="@id/addCourseFragment" />
+        <action
+            android:id="@+id/action_courseListFragment_to_editCourseFragment"
+            app:destination="@id/editCourseFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/addCourseFragment"
@@ -106,8 +113,35 @@
         android:label="fragment_add_course"
         tools:layout="@layout/fragment_add_course" >
         <action
-            android:id="@+id/action_addCourseFragment_to_homeFragment2"
-            app:destination="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_addCourseFragment_to_courseListFragment"
+            app:destination="@id/courseListFragment"
+            app:popUpTo="@id/courseListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/showTeacherTableFragment"
+        android:name="com.Fcih.attendance_admin.ShowTeacherTableFragment"
+        android:label="fragment_show_teacher_table"
+        tools:layout="@layout/fragment_show_teacher_table" >
+        <action
+            android:id="@+id/action_showTeacherTableFragment_to_addCourseToTeacherFragment"
+            app:destination="@id/addCourseToTeacherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCourseToTeacherFragment"
+        android:name="com.Fcih.attendance_admin.AddCourseToTeacherFragment"
+        android:label="fragment_add_course_to_teacher"
+        tools:layout="@layout/fragment_add_course_to_teacher" >
+        <action
+            android:id="@+id/action_addCourseToTeacherFragment_to_showTeacherTableFragment"
+            app:destination="@id/showTeacherTableFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editCourseFragment"
+        android:name="com.Fcih.attendance_admin.EditCourseFragment"
+        android:label="fragment_edit_course"
+        tools:layout="@layout/fragment_edit_course" >
+
+        <argument android:name="CourseData" />
     </fragment>
 </navigation>

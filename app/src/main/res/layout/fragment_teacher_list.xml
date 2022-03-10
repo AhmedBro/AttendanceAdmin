@@ -7,30 +7,20 @@
     android:background="@color/white">
 
 
-    <androidx.cardview.widget.CardView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/mBackView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/_15ssp"
-        android:layout_marginTop="@dimen/_15ssp"
-        android:layout_marginEnd="@dimen/_15ssp"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_10ssp"
+        android:background="@drawable/selector3"
         android:src="@drawable/logo_admin"
-        app:cardBackgroundColor="@color/primary"
-        app:cardCornerRadius="35dp"
         app:layout_constraintBottom_toTopOf="@+id/mShowTeachersTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!--YOUR CONTENT-->
-        <ImageView
-            android:id="@+id/mLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_admin" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintTop_toTopOf="parent"
+       />
 
 
     <TextView

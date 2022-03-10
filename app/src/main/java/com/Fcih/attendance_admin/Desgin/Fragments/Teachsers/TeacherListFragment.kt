@@ -1,5 +1,7 @@
 package com.Fcih.attendance_admin.Desgin.Fragments.Teachsers
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -17,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
 import com.Fcih.attendance_admin.Data.TeacherList.TeacherListViewModel
+import com.Fcih.attendance_admin.Desgin.Activities.MainActivity
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
 import com.google.firebase.firestore.ktx.toObject
@@ -27,7 +30,7 @@ import kotlinx.coroutines.launch
 
 class TeacherListFragment : Fragment() {
 
-    lateinit var teacherListViewModel: TeacherListViewModel
+
     lateinit var teacherList: ArrayList<Teacher>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,10 +52,6 @@ class TeacherListFragment : Fragment() {
 
         teacherListViewModel.showingProgressBar()
         teacherListViewModel.hideNoTeacherMessage()
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            teacherList = async { teacherListViewModel.getTeachers() }.await()
-        }
 
 
         var adapter = TeacherAdapter()
@@ -97,6 +96,56 @@ class TeacherListFragment : Fragment() {
             teacherListViewModel.doneShowingProgressBar()
         }
 
+
+        adapter.setOnItemLongClickListener {
+            deleteTeacher(it)
+
+        }
+
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        getData()
+    }
+
+    companion object {
+        lateinit var teacherListViewModel: TeacherListViewModel
+    }
+
+    fun deleteTeacher(teacher: Teacher) {
+
+
+        val builder1: AlertDialog.Builder = AlertDialog.Builder(MainActivity.context)
+        builder1.setMessage("Delete this Doctor?!")
+        builder1.setCancelable(true)
+
+        builder1.setPositiveButton(
+            "Delete",
+            DialogInterface.OnClickListener {
+
+                    dialog, id ->
+
+                teacherListViewModel.DeleteDoc(teacher)
+                getData()
+
+                dialog.cancel()
+
+            })
+
+        builder1.setNegativeButton(
+            "Cancel",
+            DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+
+        val alert11: AlertDialog = builder1.create()
+        alert11.show()
+    }
+
+    fun getData() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            teacherList = async { teacherListViewModel.getTeachers() }.await()
+        }
+    }
+
 }
