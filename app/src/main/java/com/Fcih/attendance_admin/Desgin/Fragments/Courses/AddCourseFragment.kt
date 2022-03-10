@@ -33,8 +33,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
     private val timeFormatter = SimpleDateFormat("hh:mm a", Locale.US)
     var calendar: Calendar? = null
     private val dateFormatter = SimpleDateFormat("E", Locale.US)
-    val Lectuers: ArrayList<String> = ArrayList()
-    val Lectuers2: ArrayList<Lectuers> = ArrayList()
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -59,15 +58,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
             var courseStartTime = mStartTimeEt.text.toString()
             var courseEndTime = mEndTimeEt.text.toString()
             var coursePlace = mCoursePlaceEt.text.toString()
-            Lectuers.add("Ahmed")
-            Lectuers.add("Mohame")
 
-            Lectuers.add("ali")
-
-            Lectuers.add("Ahmed")
-
-            Lectuers.add("Ahmed")
-            Lectuers2.add(Lectuers("Tests1", Lectuers))
             if (Validate()) {
                 mAddCourseProgressBar.visibility = View.VISIBLE
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -80,7 +71,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
                             courseEndTime,
                             coursePlace,
                             courseGroup,
-                            Lectuers2
+                            null
                         )
                     )
 
@@ -105,7 +96,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
         courseViewModel.isSuccess.observe(viewLifecycleOwner, Observer {
             if (it) {
                 clear()
-                findNavController().navigate(AddCourseFragmentDirections.actionAddCourseFragmentToHomeFragment2())
+                findNavController().navigate(AddCourseFragmentDirections.actionAddCourseFragmentToCourseListFragment())
                 courseViewModel.doneNavigate()
             }
         })
@@ -161,7 +152,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
         timePickerDialog = TimePickerDialog(
             activity,
             { view, hourOfDay, minute ->
-                calendar!!.set(Calendar.HOUR_OF_DAY, hourOfDay + 1)
+                calendar!!.set(Calendar.HOUR_OF_DAY, hourOfDay)
                 calendar!!.set(Calendar.MINUTE, minute)
                 mStartTimeEt.setText(timeFormatter.format(calendar!!.getTime()))
             },
