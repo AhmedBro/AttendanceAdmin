@@ -34,6 +34,7 @@ class HomeFragment : Fragment() {
             this.findNavController()
                 .navigate(HomeFragmentDirections.actionHomeFragmentToCourseListFragment())
         }
+
     }
 
 

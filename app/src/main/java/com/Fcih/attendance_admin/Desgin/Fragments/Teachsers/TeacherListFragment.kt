@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
 import com.Fcih.attendance_admin.Data.TeacherList.TeacherListViewModel
+import kotlinx.android.synthetic.main.fragment_teacher_list.*
 
 class TeacherListFragment : Fragment() {
 
@@ -68,6 +69,18 @@ class TeacherListFragment : Fragment() {
 
         return view
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        go_to_teacher_table.setOnClickListener{
+         val my_navigation_contrloller= Navigation.findNavController(this.requireView())
+            val action = TeacherListFragmentDirections.actionTeacherListFragmentToShowTeacherTableFragment()
+            my_navigation_contrloller.navigate(action)
+
+        }
+    }
+
 
 
 }

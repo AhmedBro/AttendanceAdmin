@@ -113,7 +113,7 @@
     </fragment>
     <fragment
         android:id="@+id/showTeacherTableFragment"
-        android:name="com.Fcih.attendance_admin.ShowTeacherTableFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.ShowTeacherTableFragment"
         android:label="fragment_show_teacher_table"
         tools:layout="@layout/fragment_show_teacher_table" />
 </navigation>

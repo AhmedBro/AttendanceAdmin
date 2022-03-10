@@ -28,6 +28,7 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
 
         AddStudents = ViewModelProvider(this).get(StudentViewModel::class.java)

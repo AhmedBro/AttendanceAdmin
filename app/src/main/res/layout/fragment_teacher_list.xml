@@ -30,6 +30,7 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:src="@drawable/logo_admin" />
+
     </androidx.cardview.widget.CardView>
 
 
@@ -77,6 +78,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mAddTeacherTv"
         tools:listitem="@layout/list_item_teacher_view" />
+
+    <Button
+        android:id="@+id/go_to_teacher_table"
+        android:layout_width="141dp"
+        android:layout_height="79dp"
+        android:background="@drawable/selector5"
+        android:text="Go To Teacher Table"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="333dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
