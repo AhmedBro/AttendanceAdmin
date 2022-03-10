@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,9 +20,17 @@ import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.Data.CourseList.CourseListViewModel
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
+import com.squareup.okhttp.Dispatcher
+import kotlinx.android.synthetic.main.fragment_course_list.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CourseListFragment : Fragment() {
     lateinit var courseListViewModel: CourseListViewModel
+    lateinit var coursesList: ArrayList<Course>
+    lateinit var adapter: CourseListAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,39 +38,38 @@ class CourseListFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_course_list, container, false)
 
-        val application = requireNotNull(this.activity).application
-
         val rv = view.findViewById<RecyclerView>(R.id.mCourseList)
 
-
+        rv.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         courseListViewModel = ViewModelProvider(this).get(CourseListViewModel::class.java)
+        courseListViewModel.showProgressBar()
+        courseListViewModel.error.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
+        })
+        courseListViewModel.showProgressbar.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                mCoursesProgressBar.visibility = View.VISIBLE
+            } else {
+                mCoursesProgressBar.visibility = View.GONE
 
-        val manager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+            }
+        })
 
-        rv.layoutManager = manager
-
-//        var coursesList = mutableListOf(
-//            Course("CS-401", "Pl2", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-402", "Information Retrieval", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-403", "ICM", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-404", "Data Warehouse", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-405", "Operating System", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-406", "Data Communication", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-407", "Electronics", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-408", "Pl2", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-409", "Pl2", "sunday", "10:00 to 11:59 am", "h1"),
-//            Course("CS-410", "Pl2", "sunday", "10:00 to 11:59 am", "h1"),
-//        )
-        var adapter = CourseAdapter()
-//        adapter.submitList(coursesList)
-        adapter.setOnItemClickListener {
-//            Navigation.findNavController(this.requireView())
-//                .navigate()
-            Toast.makeText(application, it.courseCode, Toast.LENGTH_SHORT).show()
+         lifecycleScope.launch(Dispatchers.IO) {
+            coursesList = async { courseListViewModel.getAllCourses() }.await()
         }
-
-        rv.adapter = adapter
-
+        courseListViewModel.doneRetrieving.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                if (coursesList.size == 0) {
+                    mNoCoursesTV.visibility = View.VISIBLE
+                } else {
+                    mNoCoursesTV.visibility = View.GONE
+                }
+                adapter = CourseListAdapter(coursesList)
+                courseListViewModel.doneRetrievingdata()
+                rv.adapter = adapter
+            }
+        })
 
         var addCourseTv = view?.findViewById<TextView>(R.id.mAddCourseTv)
         addCourseTv?.setOnClickListener {
@@ -73,18 +82,5 @@ class CourseListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        InitFireStore.instance.collection(Constants.COURSES_TABLE)
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.e("Adminnnnnnnnnnnnnnnnn", "${document.data.get("lectuers")}")
-                }
-
-
-            }
-            .addOnFailureListener { exception ->
-                Log.e("Adminnnnnnnnnnnnnnnnn", "Error getting documents: ", exception)
-            }
     }
 }

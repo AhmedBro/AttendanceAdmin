@@ -87,7 +87,8 @@
         <action
             android:id="@+id/action_add_teacher_to_teacherListFragment"
             app:destination="@id/teacherListFragment"
-            app:popUpTo="@id/teacherListFragment" />
+            app:popUpTo="@id/teacherListFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/courseListFragment"
@@ -104,8 +105,9 @@
         android:label="fragment_add_course"
         tools:layout="@layout/fragment_add_course" >
         <action
-            android:id="@+id/action_addCourseFragment_to_homeFragment2"
-            app:destination="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            android:id="@+id/action_addCourseFragment_to_courseListFragment"
+            app:destination="@id/courseListFragment"
+            app:popUpTo="@id/courseListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
