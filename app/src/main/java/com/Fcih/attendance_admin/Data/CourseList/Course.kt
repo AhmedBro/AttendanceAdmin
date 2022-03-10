@@ -1,6 +1,9 @@
 package com.Fcih.attendance_admin.Data.CourseList
 
- class Course {
+import java.io.Serializable
+
+
+class Course :Serializable  {
      var courseCode : String? = null
     var courseName: String?= null
     var courseDate: String?= null

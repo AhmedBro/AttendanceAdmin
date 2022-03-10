@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.Course
+import com.Fcih.attendance_admin.Data.TeacherList.Teacher
 import com.Fcih.attendance_admin.R
 import kotlinx.android.synthetic.main.list_item_course_view.view.*
 
@@ -29,8 +30,17 @@ class CourseListAdapter(var allCoursesList : List<Course>?) : RecyclerView.Adapt
             mCourseLocation.text=allCoursesList!![position].coursePlace
 
         }
+        holder.itemView.setOnLongClickListener {
+            onItemLongClickListener?.let { it(allCoursesList!![position]) }
+            return@setOnLongClickListener true
+        }
     }
     override fun getItemCount(): Int {
         return allCoursesList!!.size
+    }
+
+    private var onItemLongClickListener: ((Course) -> Unit)? = null
+    fun setOnItemLongClickListener(listener: (Course) -> Unit) {
+        onItemLongClickListener = listener
     }
 }
