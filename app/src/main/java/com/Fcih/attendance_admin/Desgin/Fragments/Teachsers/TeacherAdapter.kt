@@ -42,7 +42,7 @@ class TeacherAdapter() :
         }
 
         override fun areContentsTheSame(p0: Teacher, p1: Teacher): Boolean {
-            return p0 == p1
+            return p0.equals(p1)
         }
     }
 
