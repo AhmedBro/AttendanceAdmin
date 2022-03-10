@@ -78,5 +78,30 @@
         app:layout_constraintTop_toBottomOf="@+id/mAddTeacherTv"
         tools:listitem="@layout/list_item_teacher_view" />
 
+    <ProgressBar
+        android:id="@+id/mTeacherListProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/mTeacherList"
+        app:layout_constraintEnd_toEndOf="@+id/mTeacherList"
+        app:layout_constraintStart_toStartOf="@+id/mTeacherList"
+        app:layout_constraintTop_toTopOf="@+id/mTeacherList" />
+
+    <TextView
+        android:id="@+id/mNoTeachers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_teachers_yet"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="italic|bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/mTeacherList"
+        app:layout_constraintEnd_toEndOf="@+id/mTeacherList"
+        app:layout_constraintStart_toStartOf="@+id/mTeacherList"
+        app:layout_constraintTop_toTopOf="@+id/mTeacherList" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
