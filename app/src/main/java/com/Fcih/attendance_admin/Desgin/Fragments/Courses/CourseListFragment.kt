@@ -101,7 +101,7 @@ class CourseListFragment : Fragment() {
         val bundle: Bundle = Bundle()
         bundle.putSerializable("DataCourse", course)
         val builder1: AlertDialog.Builder = AlertDialog.Builder(MainActivity.context)
-        builder1.setMessage("Delete this Doctor?!")
+        builder1.setMessage(course.courseName)
         builder1.setCancelable(true)
 
         builder1.setPositiveButton(
