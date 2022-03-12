@@ -1,14 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddCourseToTeacherFragment">
+    android:background="@color/white"
+    tools:context=".Desgin.Fragments.Teachsers.AddCourseToTeacherFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/logo"
+        android:layout_width="388dp"
+        android:layout_height="172dp"
+        android:layout_margin="@dimen/_10ssp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/selector3"
+        android:foregroundGravity="center_horizontal"
+        android:src="@drawable/logo_admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_15ssp"
+        app:shapeAppearanceOverlay="@style/RoundedSquare" />
 
-</FrameLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mCheckBoxRecycler"
+        android:layout_width="420dp"
+        android:layout_height="436dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:background="@drawable/selector4"
+        android:text="@string/save_cources"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCheckBoxRecycler" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

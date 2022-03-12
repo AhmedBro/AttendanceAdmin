@@ -12,6 +12,25 @@ class Course :Serializable  {
     var coursePlace: String?= null
     var courseGroup: String?= null
     var Lectuers:ArrayList<Lectuers>?= null
+    constructor(
+        courseCode: String?,
+        courseName: String?,
+        courseDate: String?,
+        courseTimeFrom: String?,
+        courseTimeTo: String?,
+        coursePlace: String?,
+        courseGroup: String?,
+
+    ){
+        this.courseCode = courseCode
+        this.courseName = courseName
+        this.courseDate = courseDate
+        this.courseTimeFrom = courseTimeFrom
+        this.courseTimeTo = courseTimeTo
+        this.coursePlace = coursePlace
+        this.courseGroup = courseGroup
+
+    }
 
     constructor()
     constructor(
