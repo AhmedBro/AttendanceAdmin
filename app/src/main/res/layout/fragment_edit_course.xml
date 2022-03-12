@@ -1,14 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditCourseFragment">
+    android:background="@color/white"
+    tools:context=".Desgin.Fragments.Courses.EditCourseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/mlogoIV"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_300ssp"
+                android:layout_margin="@dimen/_10ssp"
+                android:background="@drawable/selector3"
+                android:foregroundGravity="center_horizontal"
+                android:src="@drawable/logo_admin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="@dimen/_15ssp"
+                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+            <TextView
+                android:id="@+id/mCourseNametv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="Course Name"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/mCourseNameEt"
+                app:layout_constraintTop_toBottomOf="@+id/mlogoIV" />
+
+            <EditText
+                android:id="@+id/mCourseNameEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:background="@drawable/edit_text_forget_password"
+                android:padding="@dimen/_10ssp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseNametv" />
+
+            <TextView
+                android:id="@+id/mCourseCodetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="Course Code"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/mCourseCodeEt"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseNameEt" />
+
+            <EditText
+                android:id="@+id/mCourseCodeEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:background="@drawable/edit_text_forget_password"
+                android:editable="false"
+                android:padding="@dimen/_10ssp"
+                android:textColor="@color/light_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseCodetv" />
+
+            <TextView
+                android:id="@+id/mDatetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="Date"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/mCourseDateEt"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseCodeEt" />
+
+
+            <TextView
+                android:id="@+id/mCourseDateEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:background="@drawable/edit_text_forget_password"
+                android:inputType="date"
+                android:padding="@dimen/_10ssp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mDatetv" />
+
+            <TextView
+                android:id="@+id/mTimetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="From"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/mDatetv"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseDateEt" />
+
+            <TextView
+                android:id="@+id/mToTimetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:text="To"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="@+id/mDatetv"
+                app:layout_constraintTop_toBottomOf="@+id/mCourseDateEt" />
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mTimetv">
+
+                <TextView
+                    android:id="@+id/mStartTimeEt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_35ssp"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_35ssp"
+                    android:layout_marginBottom="@dimen/_15ssp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_forget_password"
+                    android:inputType="time"
+                    android:padding="@dimen/_10ssp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTimetv" />
+
+                <TextView
+                    android:id="@+id/mEndTimeEt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10ssp"
+                    android:layout_marginEnd="@dimen/_35ssp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_forget_password"
+                    android:inputType="time"
+                    android:padding="@dimen/_10ssp"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTimetv" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/mPlacetv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5ssp"
+                android:text="Place"
+                android:textAllCaps="false"
+                android:textColor="@color/primary"
+                android:textSize="@dimen/_10ssp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="@+id/mCoursePlaceEt"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+
+            <EditText
+                android:id="@+id/mCoursePlaceEt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:background="@drawable/edit_text_forget_password"
+                android:padding="@dimen/_10ssp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mPlacetv" />
+
+            <Spinner
+                android:id="@+id/mGroupsp"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30ssp"
+                android:layout_marginTop="@dimen/_10ssp"
+                android:entries="@array/Groups"
+                android:theme="@style/mySpinner"
+                app:layout_constraintStart_toStartOf="@+id/mCoursePlaceEt"
+                app:layout_constraintTop_toBottomOf="@+id/mCoursePlaceEt" />
+
+            <Button
+                android:id="@+id/mSaveCourseBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_35ssp"
+                android:layout_marginTop="@dimen/_20ssp"
+                android:layout_marginEnd="@dimen/_35ssp"
+                android:layout_marginBottom="@dimen/_20ssp"
+                android:background="@drawable/button_forget_password"
+                android:text="@string/save"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mGroupsp"
+                app:layout_constraintVertical_bias="0.075" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/mEditCourseProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

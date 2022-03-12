@@ -1,9 +1,12 @@
 package com.Fcih.attendance_admin.Data.CourseList
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.Fcih.attendance_admin.Data.TeacherList.Teacher
+import com.Fcih.attendance_admin.Desgin.Activities.MainActivity
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
 
@@ -18,7 +21,7 @@ class CourseListViewModel : ViewModel() {
 //    get() = _coursesListData
 
     private val _error = MutableLiveData<String>()
-    val error : LiveData<String>
+    val error: LiveData<String>
         get() = _error
 
     private val _doneRetrieving = MutableLiveData<Boolean>()
@@ -28,27 +31,41 @@ class CourseListViewModel : ViewModel() {
     fun doneRetrievingdata() {
         _doneRetrieving.value = false
     }
+
     fun showProgressBar() {
         _showProgressbar.value = true
     }
 
 
-
-    suspend fun getAllCourses():ArrayList<Course>{
+    suspend fun getAllCourses(): ArrayList<Course> {
         var courses = ArrayList<Course>()
         InitFireStore.instance.collection(Constants.COURSES_TABLE)
             .get().addOnSuccessListener {
-                for (course in it ){
-                    var newCourse=course.toObject(Course::class.java)
+                for (course in it) {
+                    var newCourse = course.toObject(Course::class.java)
                     courses.add(newCourse)
                 }
-                _doneRetrieving.value=true
-                _showProgressbar.value=false
+                _doneRetrieving.value = true
+                _showProgressbar.value = false
 
             }.addOnFailureListener {
-                _error.value=it.message
-                _showProgressbar.value=false
+                _error.value = it.message
+                _showProgressbar.value = false
             }
         return courses
+    }
+
+    fun deleteCourse(course: Course) {
+        InitFireStore.instance.collection(Constants.COURSES_TABLE)
+            .document(course.courseCode + " " + course.courseGroup).delete().addOnSuccessListener {
+
+                Toast.makeText(MainActivity.context, "Course has been deleted", Toast.LENGTH_LONG)
+                    .show()
+
+            }
+                .addOnFailureListener {
+                    Toast.makeText(MainActivity.context, it.message, Toast.LENGTH_LONG).show()
+
+                }
     }
 }

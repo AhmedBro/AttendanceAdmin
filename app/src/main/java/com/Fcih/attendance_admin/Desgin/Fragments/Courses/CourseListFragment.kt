@@ -63,9 +63,7 @@ class CourseListFragment : Fragment() {
             }
         })
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            coursesList = async { courseListViewModel.getAllCourses() }.await()
-        }
+
         courseListViewModel.doneRetrieving.observe(viewLifecycleOwner, Observer {
             if (it) {
                 if (coursesList.size == 0) {
@@ -94,6 +92,7 @@ class CourseListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        getData()
     }
 
     fun edit(course: Course) {
@@ -109,7 +108,8 @@ class CourseListFragment : Fragment() {
             DialogInterface.OnClickListener {
 
                     dialog, id ->
-
+                courseListViewModel.deleteCourse(course)
+                getData()
 
                 dialog.cancel()
 
@@ -130,5 +130,9 @@ class CourseListFragment : Fragment() {
         alert11.show()
     }
 
-
+    fun getData() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            coursesList = async { courseListViewModel.getAllCourses() }.await()
+        }
+    }
 }
