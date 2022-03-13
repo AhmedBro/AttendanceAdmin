@@ -39,6 +39,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
         super.onViewCreated(view, savedInstanceState)
         courseViewModel = ViewModelProvider(this).get(CourseViewModel::class.java)
         calendar = Calendar.getInstance()
+
         mGroupsp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>?,
@@ -51,7 +52,11 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
 
             override fun onNothingSelected(parent: AdapterView<*>?) {}
         }
-        mAddCourseBtn.setOnClickListener {
+        //Course_Btn***************************************************
+        //***************************************************************
+        //****************************************************************
+       //*****************************************************************
+     /* ********** */ mAddCourseBtn.setOnClickListener {/* ******************** */
             var courseName = mCourseNameEt.text.toString()
             var courseCode = mCourseCodeEt.text.toString()
             var courseDate = mCourseDateEt.text.toString()

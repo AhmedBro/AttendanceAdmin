@@ -132,7 +132,7 @@
     </fragment>
     <fragment
         android:id="@+id/addCourseToTeacherFragment"
-        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.AddCourseToTeacherFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.Courses.AddCourseToTeacherFragment"
         android:label="fragment_add_course_to_teacher"
         tools:layout="@layout/fragment_add_course_to_teacher" >
         <action

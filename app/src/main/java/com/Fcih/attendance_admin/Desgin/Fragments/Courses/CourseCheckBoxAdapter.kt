@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.Fcih.attendance_admin.Data.CourseList.Course_checkBox
+import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.R
 import kotlinx.android.synthetic.main.course_checkbox_item_list.view.*
 
-class CourseCheckBoxAdapter (var mylist :ArrayList<Course_checkBox>):RecyclerView.Adapter<CourseCheckBoxAdapter.view_holder>()
+class CourseCheckBoxAdapter(var mylist: ArrayList<Course>):RecyclerView.Adapter<CourseCheckBoxAdapter.view_holder>()
 {
 
 
@@ -21,13 +21,12 @@ class CourseCheckBoxAdapter (var mylist :ArrayList<Course_checkBox>):RecyclerVie
 
     override fun onBindViewHolder(holder: view_holder, position: Int) {
 var course_info = mylist[position]
-        holder.name.text = course_info.name
-        holder.code.text=course_info.code
-        holder.day.text=course_info.day
-        holder.from_date.text=course_info.DateFrom
-        holder.to_date.text=course_info.ToDate
-        holder.location.text=course_info.Location
-
+        holder.name.text = course_info.courseName
+        holder.code.text=course_info.courseCode
+        holder.day.text=course_info.courseDate
+        holder.from_date.text=course_info.courseTimeFrom
+        holder.to_date.text=course_info.courseTimeTo
+        holder.location.text=course_info.coursePlace
     }
     override fun getItemCount(): Int {
         return mylist.size

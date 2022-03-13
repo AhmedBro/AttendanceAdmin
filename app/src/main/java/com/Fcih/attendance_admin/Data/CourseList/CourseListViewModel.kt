@@ -43,6 +43,7 @@ class CourseListViewModel : ViewModel() {
             .get().addOnSuccessListener {
                 for (course in it) {
                     var newCourse = course.toObject(Course::class.java)
+                    Log.d(newCourse.courseCode,"MennaTestSecond")
                     courses.add(newCourse)
                 }
                 _doneRetrieving.value = true
