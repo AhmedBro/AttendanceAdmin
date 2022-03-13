@@ -40,7 +40,7 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
                 mEndValue = Integer.parseInt(mLastIdEt.text.toString())
                 lifecycleScope.launch(Dispatchers.IO) {
                     for (i in mStartValue!!..mEndValue!!) {
-                        student = Student(i.toString(), i.toString())
+                        student = Student(i.toString(), i.toString() , null)
                         AddStudents.AddStudent(student, mYearEt.text.toString() , mEndValue!!)
                     }
 

@@ -1,12 +1,13 @@
 package com.Fcih.attendance_admin.Data.TeacherList
 
 import com.Fcih.attendance_admin.Data.CourseList.Course
+import java.io.Serializable
 
-class Teacher{
+class Teacher : Serializable{
     var id : String? = null
     var teacherName : String? = null
     var teacherPassword : String? = null
-    var Courses : ArrayList<Course>? = null
+    var CoursesId : ArrayList<String>? = null
 
     constructor(){
 
@@ -16,11 +17,11 @@ class Teacher{
         id: String?,
         teacherName: String?,
         teacherPassword: String?,
-        Courses: ArrayList<Course>?
+        Courses: ArrayList<String>?
     ) {
         this.id = id
         this.teacherName = teacherName
         this.teacherPassword = teacherPassword
-        this.Courses = Courses
+        this.CoursesId = Courses
     }
 }

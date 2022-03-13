@@ -21,7 +21,7 @@ class CourseViewModel:ViewModel() {
 
     suspend fun addCourse(course: Course){
         
-        InitFireStore.instance.collection(Constants.COURSES_TABLE).document(course.courseCode+" "+course.courseGroup)
+        InitFireStore.instance.collection(Constants.COURSES_TABLE).document(course.courseCode+course.courseGroup)
             .set(course).addOnSuccessListener {
                 _showProgressbar.value = false
                 _error.value = "Course Added Successfully"

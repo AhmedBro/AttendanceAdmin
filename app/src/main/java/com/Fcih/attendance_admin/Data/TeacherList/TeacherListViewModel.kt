@@ -62,7 +62,6 @@ class TeacherListViewModel : ViewModel() {
 
             }
             .addOnFailureListener { exception ->
-                Log.e("Adminnnnnnnnnnnnnnnnn", "Error getting documents: ", exception)
                 _showProgressbar.value = false
             }
         return teachers

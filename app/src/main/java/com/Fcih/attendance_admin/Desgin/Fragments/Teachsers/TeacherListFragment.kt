@@ -83,9 +83,9 @@ private lateinit var mynav :NavController
 
 
         adapter.setOnItemClickListener {
-//            Navigation.findNavController(this.requireView())
-//                .navigate(TeacherListFragmentDirections.)
-            Toast.makeText(application, it.teacherName, Toast.LENGTH_SHORT).show()
+
+            Navigation.findNavController(this.requireView())
+                .navigate(TeacherListFragmentDirections.actionTeacherListFragmentToShowTeacherTableFragment(it))
         }
 
         rv.adapter = adapter
@@ -115,10 +115,7 @@ private lateinit var mynav :NavController
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getData()
-        go_to_table.setOnClickListener{
-            var goaction = TeacherListFragmentDirections.actionTeacherListFragmentToShowTeacherTableFragment()
-            mynav.navigate(goaction)
-        }
+
 
     }
 

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.Fcih.attendance_admin.Data.LocalData.SharedPreferences
 import com.Fcih.attendance_admin.R
 import com.Fcih.attendance_admin.Data.Login.LoginViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,8 @@ import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment() {
     lateinit var auth: FirebaseAuth
+
+    lateinit var mSharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -42,7 +45,7 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
-
+        mSharedPreferences = context?.let { SharedPreferences(it) }!!
         loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         auth = Firebase.auth
@@ -64,6 +67,8 @@ class LoginFragment : Fragment() {
 
         loginViewModel.navigateToHome.observe(viewLifecycleOwner, Observer {
             if (it) {
+                mSharedPreferences.setAdminData("admin" , "1" , true)
+
                 Navigation.findNavController(this.requireView())
                     .navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                 loginViewModel.doneNavigatingToHome()
