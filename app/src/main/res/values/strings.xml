@@ -34,7 +34,6 @@
     <string name="teacher_title">The Teachers</string>
     <string name="no_teachers_yet">No teachers yet.</string>
     <string name="save">Save</string>
-
     <string-array name="Groups">
         <item> Group 1</item>
         <item> Group 2</item>

@@ -13,7 +13,9 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.R
@@ -29,7 +31,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 
 class TeacherListFragment : Fragment() {
-
+private lateinit var mynav :NavController
 
     lateinit var teacherList: ArrayList<Teacher>
     override fun onCreateView(
@@ -105,9 +107,19 @@ class TeacherListFragment : Fragment() {
         return view
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        mynav=findNavController()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getData()
+        go_to_table.setOnClickListener{
+            var goaction = TeacherListFragmentDirections.actionTeacherListFragmentToShowTeacherTableFragment()
+            mynav.navigate(goaction)
+        }
+
     }
 
     companion object {
@@ -147,5 +159,6 @@ class TeacherListFragment : Fragment() {
             teacherList = async { teacherListViewModel.getTeachers() }.await()
         }
     }
+
 
 }

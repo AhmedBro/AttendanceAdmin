@@ -1,33 +1,25 @@
 package com.Fcih.attendance_admin.Desgin.Fragments.Teachsers
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.Fcih.attendance_admin.Data.CourseList.Course_checkBox
+import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseCheckBoxAdapter
 import com.Fcih.attendance_admin.R
+import kotlinx.android.synthetic.main.fragment_add_course.*
+import kotlinx.android.synthetic.main.fragment_add_course_to_teacher.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AddCourseToTeacherFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddCourseToTeacherFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -38,23 +30,30 @@ class AddCourseToTeacherFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_add_course_to_teacher, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddCourseToTeacherFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddCourseToTeacherFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    @SuppressLint("WrongConstant")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var mylist =ArrayList<Course_checkBox>()
+        var course2 = Course_checkBox("math1","11","sunday","2Pm","4pm","h2")
+        var course3 = Course_checkBox("math1","11","sunday","2Pm","4pm","h2")
+
+        var course4 = Course_checkBox("math1","11","sunday","2Pm","4pm","h2")
+
+        var course1 = Course_checkBox("math1","11","sunday","2Pm","4pm","h2")
+
+        mylist.add(course1)
+        mylist.add(course2)
+        mylist.add(course3)
+        mylist.add(course4)
+        mCheckBoxRecycler.layoutManager=LinearLayoutManager(requireContext(), LinearLayout.VERTICAL,false)
+
+        var my_adapter = CourseCheckBoxAdapter(mylist)
+        mCheckBoxRecycler.adapter=my_adapter
+
+
+
     }
+
+
 }
