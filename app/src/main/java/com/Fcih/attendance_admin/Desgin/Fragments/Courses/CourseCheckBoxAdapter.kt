@@ -33,12 +33,13 @@ var course_info = mylist[position]
         holder.to_date.text=course_info.courseTimeTo
         holder.location.text=course_info.coursePlace
         var i = course_info.courseCode.toString()
+        var c =course_info.courseGroup.toString()
 
 
 holder.thelayout.setOnClickListener{
     Log.d("selecid","before selected")
     holder.thelayout.setBackgroundResource(R.drawable.selector2)
-   selectedCourses.add(i)
+   selectedCourses.add(i+c)
  Log.d("selecid",i)
 }
 

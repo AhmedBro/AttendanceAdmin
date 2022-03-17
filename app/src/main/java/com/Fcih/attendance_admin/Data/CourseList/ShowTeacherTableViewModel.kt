@@ -41,7 +41,8 @@ class ShowTeacherTableViewModel: ViewModel()  {
                 for (course in it) {
                     val newCourse = course.toObject(Course::class.java)
                     if (cousecod != null) {
-                        if(newCourse.courseCode.toString() in cousecod)
+                        var i =newCourse.courseCode.toString()+newCourse.courseGroup.toString()
+                        if(i in cousecod)
                             courses.add(newCourse)
                     }
                 }
