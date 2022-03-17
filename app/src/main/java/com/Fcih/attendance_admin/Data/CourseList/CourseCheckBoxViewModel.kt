@@ -69,22 +69,25 @@ lateinit var adapter :CourseCheckBoxAdapter
         }
 
 
-     fun addCourseToteacher(teaccher: Teacher){
-       var s : String? = teaccher.id
+     fun addCourseToteacher(teaccher: Teacher,ss :ArrayList<String>) {
+         var s: String? = teaccher.teacherName+teaccher.id
 
-        if (s != null) {
-            InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s). update("coursesId",teaccher.CoursesId)
-                .addOnSuccessListener {
-                    _showProgressbar.value = false
-                    _error.value = "Course Added Successfully"
-                    _isSuccess.value=true
-                }
-                .addOnFailureListener {
-                    _showProgressbar.value = false
-                    _error.value = it.message.toString()
-                    _isSuccess.value=false
-                }
-        }
+
+         if (s != null) {
+             InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
+                 .update("coursesId", ss)
+                 .addOnSuccessListener {
+                     _showProgressbar.value = false
+                     _error.value = "Course Added Successfully"
+                     _isSuccess.value = true
+                 }
+                 .addOnFailureListener {
+                     _showProgressbar.value = false
+                     _error.value = it.message.toString()
+                     _isSuccess.value = false
+                 }
+         }
+     }
 
 
        /* val washingtonRef = db.collection("cities").document("DC")
@@ -109,7 +112,7 @@ lateinit var adapter :CourseCheckBoxAdapter
                 }
         }*/
 
-    }
+
 
     fun doneNavigate(){
         _isSuccess.value=false

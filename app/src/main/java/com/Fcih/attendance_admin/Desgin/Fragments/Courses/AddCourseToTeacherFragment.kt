@@ -34,10 +34,11 @@ class AddCourseToTeacherFragment : Fragment() {
 
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
+        mTeacher = AddCourseToTeacherFragmentArgs.fromBundle(requireArguments()).teacherData
 
     }
 
@@ -73,20 +74,23 @@ class AddCourseToTeacherFragment : Fragment() {
                 adapter = CourseCheckBoxAdapter(coursesList)
                 course_checkbox_ViewModel.doneRetrievingdata()
                 rv.adapter = adapter
-
+                var ss = mTeacher.CoursesId
 
                 mTeacher = AddCourseToTeacherFragmentArgs.fromBundle(requireArguments()).teacherData
-                if (mTeacher.CoursesId != null)
-                {for (i in mTeacher.CoursesId!!)
+                if (ss != null)
+                {for (i in ss!!)
                     adapter.selectedCourses.add(i)
                 }
-                mTeacher.CoursesId=adapter.selectedCourses
+                ss=adapter.selectedCourses
+
 
 
 
                 mAddCourseToTeacherBtn.setOnClickListener{
 
-                    course_checkbox_ViewModel.addCourseToteacher(mTeacher)
+
+                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,ss)
+
                 }
 
 
