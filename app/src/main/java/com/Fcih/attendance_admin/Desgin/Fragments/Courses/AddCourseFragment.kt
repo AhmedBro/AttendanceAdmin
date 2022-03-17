@@ -28,6 +28,9 @@ import kotlin.collections.ArrayList
 class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
     lateinit var courseGroup: String
     lateinit var courseViewModel: CourseViewModel
+
+
+
     private var datePickerDialog: DatePickerDialog? = null
     private var timePickerDialog: TimePickerDialog? = null
     private val timeFormatter = SimpleDateFormat("hh:mm a", Locale.US)

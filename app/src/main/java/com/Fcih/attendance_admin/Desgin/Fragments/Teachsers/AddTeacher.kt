@@ -22,8 +22,13 @@ class AddTeacher : Fragment(R.layout.fragment_add_teacher) {
 
     var teacherName: String? = null
     var teacherCode: String? = null
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var coursescode:ArrayList<String> =ArrayList()
+
+
 
         addTeacherViewModel = ViewModelProvider(this).get(AddTeacherViewModel::class.java)
 
@@ -33,7 +38,7 @@ class AddTeacher : Fragment(R.layout.fragment_add_teacher) {
                 var teacherName = edit_teacher_name.text.toString()
                 var teacherCode = edit_teacher_code.text.toString()
 
-                addTeacherViewModel.addTeacher(Teacher(teacherCode, teacherName, teacherCode , null))
+                addTeacherViewModel.addTeacher(Teacher(teacherCode, teacherName, teacherCode ,null ))
 
             } else {
                 mAddTeacherProgressBar.visibility = View.GONE

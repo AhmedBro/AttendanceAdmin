@@ -50,10 +50,14 @@ class CourseListFragment : Fragment() {
 
         rv.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
         courseListViewModel = ViewModelProvider(this).get(CourseListViewModel::class.java)
+
+
+
         courseListViewModel.showProgressBar()
         courseListViewModel.error.observe(viewLifecycleOwner, Observer {
             Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
         })
+
         courseListViewModel.showProgressbar.observe(viewLifecycleOwner, Observer {
             if (it) {
                 mCoursesProgressBar.visibility = View.VISIBLE
@@ -81,6 +85,10 @@ class CourseListFragment : Fragment() {
         })
 
 
+
+
+
+
         var addCourseTv = view?.findViewById<TextView>(R.id.mAddCourseTv)
         addCourseTv?.setOnClickListener {
             Navigation.findNavController(this.requireView())
@@ -93,6 +101,13 @@ class CourseListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getData()
+    }
+
+    fun getData() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            coursesList = async { courseListViewModel.getAllCourses() }.await()
+        }
+
     }
 
     fun edit(course: Course) {
@@ -130,9 +145,4 @@ class CourseListFragment : Fragment() {
         alert11.show()
     }
 
-    fun getData() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            coursesList = async { courseListViewModel.getAllCourses() }.await()
-        }
-    }
 }

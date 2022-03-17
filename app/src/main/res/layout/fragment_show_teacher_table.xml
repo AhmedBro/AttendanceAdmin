@@ -62,6 +62,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mAddTeacherCourseTv" />
+    <ProgressBar
+        android:id="@+id/mTeacherTableProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mTableRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/mTableRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mTableRecyclerView" />
+
+    <TextView
+        android:id="@+id/mTeacherTableNoCoursesTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No courses yet"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mTableRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/mTableRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/mTableRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/mTableRecyclerView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,22 @@
 package com.Fcih.attendance_admin.Desgin.Fragments.Courses
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.R
 import kotlinx.android.synthetic.main.course_checkbox_item_list.view.*
+import kotlinx.android.synthetic.main.fragment_add_course_to_teacher.view.*
 
 class CourseCheckBoxAdapter(var mylist: ArrayList<Course>):RecyclerView.Adapter<CourseCheckBoxAdapter.view_holder>()
 {
 
 
+   var selectedCourses: ArrayList<String> =ArrayList<String>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): view_holder {
        var v = LayoutInflater.from(parent.context).inflate(R.layout.course_checkbox_item_list,parent,false)
@@ -27,9 +32,22 @@ var course_info = mylist[position]
         holder.from_date.text=course_info.courseTimeFrom
         holder.to_date.text=course_info.courseTimeTo
         holder.location.text=course_info.coursePlace
+        var i = course_info.courseCode.toString()
+
+
+holder.thelayout.setOnClickListener{
+    Log.d("selecid","before selected")
+    holder.thelayout.setBackgroundResource(R.drawable.selector2)
+   selectedCourses.add(i)
+ Log.d("selecid",i)
+}
+
     }
     override fun getItemCount(): Int {
         return mylist.size
+    }
+    fun getSelectedCourse(): ArrayList<String> {
+        return selectedCourses
     }
 
     class view_holder(itemview:View):RecyclerView.ViewHolder(itemview)
@@ -40,6 +58,10 @@ var course_info = mylist[position]
         var from_date= itemview.mCheckCourseFromDate
         var to_date = itemview.mCheckCourseToDate
         var location = itemview.mCheckCourseLocation
+        val thelayout =itemview.mCheckBoxItemList
+
+
+
 
     }
 }

@@ -8,30 +8,87 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.Course
+import com.Fcih.attendance_admin.Data.CourseList.CourseListViewModel
 import com.Fcih.attendance_admin.Data.CourseList.Lectuers
+import com.Fcih.attendance_admin.Data.CourseList.ShowTeacherTableViewModel
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
+import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseCheckBoxAdapter
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListAdapter
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListFragmentDirections
 import com.Fcih.attendance_admin.R
+import kotlinx.android.synthetic.main.fragment_course_list.*
 import kotlinx.android.synthetic.main.fragment_show_teacher_table.*
+import kotlinx.android.synthetic.main.fragment_teacher_list.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 
 class ShowTeacherTableFragment : Fragment() {
     lateinit var mTeacher: Teacher
+    lateinit var showtableviewmodel: ShowTeacherTableViewModel
+    lateinit var coursesList: ArrayList<Course>
+
+
+    lateinit var adapter: CourseListAdapter
+
+    var coursecodes: ArrayList<String> = ArrayList()
+
 
     @SuppressLint("WrongConstant")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        // mTableRecyclerView.layoutManager=LinearLayoutManager(requireContext(),LinearLayout.VERTICAL,false)
 
 
-        return inflater.inflate(R.layout.fragment_show_teacher_table, container, false)
+        val view = inflater.inflate(R.layout.fragment_show_teacher_table, container, false)
+        val rv = view.findViewById<RecyclerView>(R.id.mTableRecyclerView)
+
+
+        rv.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+        showtableviewmodel = ViewModelProvider(this).get(ShowTeacherTableViewModel::class.java)
+
+
+
+        showtableviewmodel.showProgressBar()
+        showtableviewmodel.error.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
+        })
+
+       showtableviewmodel.showProgressbar.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                mTeacherTableProgressBar.visibility = View.VISIBLE
+            } else {
+                mTeacherTableProgressBar.visibility = View.GONE
+
+            }
+        })
+
+
+        showtableviewmodel.doneRetrieving.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                if (coursesList.size == 0) {
+                    mTeacherTableNoCoursesTV.visibility = View.VISIBLE
+                    mTeacherTableProgressBar.visibility = View.GONE
+                } else {
+                    mTeacherTableNoCoursesTV.visibility = View.GONE
+                }
+                adapter = CourseListAdapter(coursesList)
+                showtableviewmodel.doneRetrievingdata()
+                rv.adapter = adapter
+            }
+
+        })
+        return view
 
 
     }
@@ -39,26 +96,45 @@ class ShowTeacherTableFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var linearLayoutManager = LinearLayoutManager(this.context)
-        mTeacher =    ShowTeacherTableFragmentArgs.fromBundle(requireArguments()).teacherData
-
-        mTableRecyclerView.layoutManager = linearLayoutManager
-        val cources = ArrayList<Course>()
-        val cource1 = Course("ds122", "DataStructure", "sundy", "11pm", "1pm", "h1", "d")
-        val cource2 = Course("Al122", "Algorithms", "monday", "12pm", "2pm", "h2", "d")
-        cources.add(cource1)
-        cources.add(cource2)
+        mTeacher = ShowTeacherTableFragmentArgs.fromBundle(requireArguments()).teacherData
 
 
-        val courseAdapter = CourseListAdapter(cources)
 
-        mTableRecyclerView.adapter = courseAdapter
+if (mTeacher.CoursesId==null)
+{
+    coursecodes= ArrayList()
+
+}
+        else
+{
+    coursecodes= mTeacher.CoursesId!!
+}
+
+
+        mTeacher_Name.text=  mTeacher.teacherName
+
+       getData()
 
         mAddTeacherCourseTv.setOnClickListener {
             Navigation.findNavController(this.requireView())
-                .navigate(ShowTeacherTableFragmentDirections.actionShowTeacherTableFragmentToAddCourseToTeacherFragment())
-
+                .navigate(ShowTeacherTableFragmentDirections.actionShowTeacherTableFragmentToAddCourseToTeacherFragment(mTeacher))
         }
+
+
+
+
     }
 
+    fun getData() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            coursesList = async { showtableviewmodel.getTheChekedCourses(coursecodes) }.await()
+        }
 
+
+    }
 }
+/* val cources = ArrayList<Course>()
+     val cource1 = Course("ds122", "DataStructure", "sundy", "11pm", "1pm", "h1", "d",null)
+     val cource2 = Course("Al122", "Algorithms", "monday", "12pm", "2pm", "h2", "d",null)
+     cources.add(cource1)
+     cources.add(cource2)*/

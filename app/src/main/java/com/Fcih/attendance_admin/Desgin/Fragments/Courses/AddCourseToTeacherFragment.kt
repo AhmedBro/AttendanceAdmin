@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.Data.CourseList.CourseCheckBoxViewModel
 import com.Fcih.attendance_admin.Data.CourseList.CourseListViewModel
+import com.Fcih.attendance_admin.Data.TeacherList.Teacher
+import com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.ShowTeacherTableFragmentArgs
 import com.Fcih.attendance_admin.R
 import kotlinx.android.synthetic.main.fragment_add_course_to_teacher.*
 import kotlinx.android.synthetic.main.fragment_course_list.*
@@ -28,11 +30,14 @@ class AddCourseToTeacherFragment : Fragment() {
     lateinit var coursesList: ArrayList<Course>
     lateinit var adapter: CourseCheckBoxAdapter
     lateinit var course_ViewModel: CourseListViewModel
+    lateinit var mTeacher: Teacher
 
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
 
     }
 
@@ -68,6 +73,23 @@ class AddCourseToTeacherFragment : Fragment() {
                 adapter = CourseCheckBoxAdapter(coursesList)
                 course_checkbox_ViewModel.doneRetrievingdata()
                 rv.adapter = adapter
+
+
+                mTeacher = AddCourseToTeacherFragmentArgs.fromBundle(requireArguments()).teacherData
+                if (mTeacher.CoursesId != null)
+                {for (i in mTeacher.CoursesId!!)
+                    adapter.selectedCourses.add(i)
+                }
+                mTeacher.CoursesId=adapter.selectedCourses
+
+
+
+                mAddCourseToTeacherBtn.setOnClickListener{
+
+                    course_checkbox_ViewModel.addCourseToteacher(mTeacher)
+                }
+
+
             }
 
 
@@ -83,8 +105,9 @@ class AddCourseToTeacherFragment : Fragment() {
     @SuppressLint("WrongConstant")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         getData()
+
+
 
 
         /*   var mylist =ArrayList<Course_checkBox>()
@@ -107,19 +130,16 @@ class AddCourseToTeacherFragment : Fragment() {
 
 
     }
+
+
     fun getData() {
         lifecycleScope.launch(Dispatchers.IO) {
             coursesList = async { course_checkbox_ViewModel.getAllChekBoxCourses() }.await()
         }
+
+
+
+
     }
-
-
-
-
-
-
-
-
-
 
 }

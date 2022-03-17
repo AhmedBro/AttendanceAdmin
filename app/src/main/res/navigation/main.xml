@@ -138,6 +138,9 @@
         <action
             android:id="@+id/action_addCourseToTeacherFragment_to_showTeacherTableFragment"
             app:destination="@id/showTeacherTableFragment" />
+        <argument
+            android:name="teacher_data"
+            app:argType="com.Fcih.attendance_admin.Data.TeacherList.Teacher" />
     </fragment>
     <fragment
         android:id="@+id/editCourseFragment"

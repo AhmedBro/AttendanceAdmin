@@ -14,7 +14,7 @@ class Teacher : Serializable{
     }
 
     constructor(
-        id: String?,
+        id: String,
         teacherName: String?,
         teacherPassword: String?,
         Courses: ArrayList<String>?
