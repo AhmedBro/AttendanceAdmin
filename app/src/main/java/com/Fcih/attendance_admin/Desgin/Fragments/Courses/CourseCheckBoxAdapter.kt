@@ -37,10 +37,16 @@ var course_info = mylist[position]
 
 
 holder.thelayout.setOnClickListener{
-    Log.d("selecid","before selected")
-    holder.thelayout.setBackgroundResource(R.drawable.selector2)
+   // Log.d("selecid","before selected")
+    //Log.d("selecid",i)
+   // holder.thelayout.setBackgroundResource(R.drawable.selector2)
    selectedCourses.add(i+c)
- Log.d("selecid",i)
+    holder.checkbox.isChecked=true
+    holder.thelayout.setOnClickListener{
+        selectedCourses.remove(i+c)
+        holder.checkbox.isChecked=false
+    }
+
 }
 
     }
@@ -60,6 +66,7 @@ holder.thelayout.setOnClickListener{
         var to_date = itemview.mCheckCourseToDate
         var location = itemview.mCheckCourseLocation
         val thelayout =itemview.mCheckBoxItemList
+        var checkbox = itemview.mCheckBoxCourse
 
 
 

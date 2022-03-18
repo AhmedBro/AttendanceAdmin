@@ -109,6 +109,7 @@ private lateinit var mynav :NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         mynav=findNavController()
     }
 

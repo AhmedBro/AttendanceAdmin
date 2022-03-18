@@ -15,10 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.Fcih.attendance_admin.Data.CourseList.Course
-import com.Fcih.attendance_admin.Data.CourseList.CourseListViewModel
-import com.Fcih.attendance_admin.Data.CourseList.Lectuers
-import com.Fcih.attendance_admin.Data.CourseList.ShowTeacherTableViewModel
+import com.Fcih.attendance_admin.Data.CourseList.*
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseCheckBoxAdapter
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListAdapter
@@ -37,7 +34,7 @@ class ShowTeacherTableFragment : Fragment() {
     lateinit var showtableviewmodel: ShowTeacherTableViewModel
     lateinit var coursesList: ArrayList<Course>
 
-
+    lateinit var course_checkbox_adapter: CourseCheckBoxAdapter
     lateinit var adapter: CourseListAdapter
 
     var coursecodes: ArrayList<String> = ArrayList()
@@ -104,6 +101,7 @@ if (mTeacher.CoursesId==null)
 {
     coursecodes= ArrayList()
 
+
 }
         else
 {
@@ -123,6 +121,10 @@ if (mTeacher.CoursesId==null)
 
 
 
+    }
+    fun getseleted (ss :ArrayList<String>): ArrayList<String> {
+       var s= course_checkbox_adapter.getSelectedCourse()
+        return s
     }
 
     fun getData() {

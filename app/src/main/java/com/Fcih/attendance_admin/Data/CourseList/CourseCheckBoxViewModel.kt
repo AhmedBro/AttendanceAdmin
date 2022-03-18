@@ -6,7 +6,9 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.navigation.Navigation
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
+import com.Fcih.attendance_admin.Desgin.Fragments.Courses.AddCourseToTeacherFragmentDirections
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseCheckBoxAdapter
 import com.Fcih.attendance_admin.Domain.Constants
 import com.Fcih.attendance_admin.Domain.InitFireStore
@@ -69,23 +71,34 @@ lateinit var adapter :CourseCheckBoxAdapter
         }
 
 
-     fun addCourseToteacher(teaccher: Teacher,ss :ArrayList<String>) {
+     fun addCourseToteacher(teaccher: Teacher,allcourses:ArrayList<String>,addedselected:ArrayList<String>) {
          var s: String? = teaccher.teacherName+teaccher.id
 
 
          if (s != null) {
-             InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
-                 .update("coursesId", ss)
-                 .addOnSuccessListener {
-                     _showProgressbar.value = false
-                     _error.value = "Course Added Successfully"
-                     _isSuccess.value = true
+             if (addedselected.size !=0) {
+
+                 for (i in addedselected)
+                 {
+                     allcourses.add(i)
                  }
-                 .addOnFailureListener {
-                     _showProgressbar.value = false
-                     _error.value = it.message.toString()
-                     _isSuccess.value = false
-                 }
+                 InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
+                     .update("coursesId", allcourses)
+                     .addOnSuccessListener {
+                         _showProgressbar.value = false
+                         _error.value = "Course Added Successfully"
+                         _isSuccess.value = true
+                     }
+                     .addOnFailureListener {
+                         _showProgressbar.value = false
+                         _error.value = it.message.toString()
+                         _isSuccess.value = false
+                     }
+             }
+             if (addedselected.size ==0)
+              {
+                 _error.value = "Please select Teacher's courses"
+             }
          }
      }
 

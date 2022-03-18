@@ -2,6 +2,7 @@ package com.Fcih.attendance_admin.Desgin.Fragments.Courses
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.Course
@@ -74,22 +76,44 @@ class AddCourseToTeacherFragment : Fragment() {
                 adapter = CourseCheckBoxAdapter(coursesList)
                 course_checkbox_ViewModel.doneRetrievingdata()
                 rv.adapter = adapter
-                var ss = mTeacher.CoursesId
+                // in this step we grap the courses which is already in teacher table to add it
+                //to the the selected courses because firestore doesn't allow add new item in array
+
+
+
 
                 mTeacher = AddCourseToTeacherFragmentArgs.fromBundle(requireArguments()).teacherData
-                if (ss != null)
-                {for (i in ss!!)
-                    adapter.selectedCourses.add(i)
-                }
-                ss=adapter.selectedCourses
+                var courses = mTeacher.CoursesId
+                val addedselected=adapter.selectedCourses
+
+
+
+
+
+
 
 
 
 
                 mAddCourseToTeacherBtn.setOnClickListener{
 
+var justseleted = adapter.selectedCourses
 
-                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,ss)
+                    if (courses != null) {
+                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,courses,addedselected)
+                    }
+                    if (courses ==null)
+                    {
+                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,addedselected,addedselected)
+                    }
+
+
+
+
+                  for (i in addedselected)
+                  {
+                      Log.d("justselected",i)
+                  }
 
                 }
 
