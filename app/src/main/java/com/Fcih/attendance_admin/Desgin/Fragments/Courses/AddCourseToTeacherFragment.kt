@@ -104,7 +104,8 @@ var justseleted = adapter.selectedCourses
                     }
                     if (courses ==null)
                     {
-                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,addedselected,addedselected)
+                        var ss : ArrayList<String> = ArrayList()
+                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,ss,addedselected)
                     }
 
 

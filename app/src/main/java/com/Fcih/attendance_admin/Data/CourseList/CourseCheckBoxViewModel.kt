@@ -77,6 +77,21 @@ lateinit var adapter :CourseCheckBoxAdapter
 
          if (s != null) {
              if (addedselected.size !=0) {
+if (allcourses.isEmpty())
+{
+    InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
+        .update("coursesId", addedselected)
+        .addOnSuccessListener {
+            _showProgressbar.value = false
+            _error.value = "Course Added Successfully"
+            _isSuccess.value = true
+        }
+        .addOnFailureListener {
+            _showProgressbar.value = false
+            _error.value = it.message.toString()
+            _isSuccess.value = false
+        }
+}
 
                  for (i in addedselected)
                  {
