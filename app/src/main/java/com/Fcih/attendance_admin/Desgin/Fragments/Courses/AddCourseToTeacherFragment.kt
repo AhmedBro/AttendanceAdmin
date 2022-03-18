@@ -69,7 +69,7 @@ class AddCourseToTeacherFragment : Fragment() {
         course_checkbox_ViewModel.doneRetrieving.observe(viewLifecycleOwner, Observer {
             if (it) {
                 if (coursesList.size == 0) {
-                    mNoCoursesTV.visibility = View.VISIBLE
+                    mChexBoxNoCoursesTV.visibility = View.VISIBLE
                 } else {
                     mChexBoxNoCoursesTV.visibility = View.GONE
                 }
