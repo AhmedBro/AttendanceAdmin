@@ -7,9 +7,11 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import com.Fcih.attendance_admin.Data.Login.LoginViewModel
 import com.Fcih.attendance_admin.Data.Students.Student
 import com.Fcih.attendance_admin.Data.Students.StudentViewModel
+import com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.AddTeacherDirections
 import com.Fcih.attendance_admin.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -32,6 +34,11 @@ class AddStudentsFragment : Fragment(R.layout.fragment_add_students) {
         super.onViewCreated(view, savedInstanceState)
 
         AddStudents = ViewModelProvider(this).get(StudentViewModel::class.java)
+
+
+        mSearchStudentTv.setOnClickListener {
+            Navigation.findNavController(this.requireView()).navigate(AddStudentsFragmentDirections.actionAddStudentsFragmentToSearchStudentFragment())
+        }
 
         mAddStudents.setOnClickListener {
             mLoadingAddStudent.visibility = View.VISIBLE

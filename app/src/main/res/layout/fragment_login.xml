@@ -49,7 +49,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/mEmailLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_35ssp"
@@ -88,7 +88,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/mPasswordLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_35ssp"

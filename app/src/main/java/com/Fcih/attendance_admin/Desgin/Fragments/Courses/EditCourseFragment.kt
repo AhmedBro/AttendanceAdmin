@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.Fcih.attendance_admin.Data.CourseList.Course
 import com.Fcih.attendance_admin.Data.CourseList.EditCourseViewModel
 import com.Fcih.attendance_admin.R
@@ -114,12 +115,12 @@ class EditCourseFragment : Fragment() {
     }
 
     private fun observers() {
-//        editCourseViewModel.isSuccess.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
-//            if (it) {
-//                findNavController().navigate(EditCourseFragmentDirections.actionEditCourseFragmentToCourseListFragment())
-//                editCourseViewModel.doneNavigate()
-//            }
-//        })
+        editCourseViewModel.isSuccess.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it) {
+                findNavController().navigate(EditCourseFragmentDirections.actionEditCourseFragmentToCourseListFragment2())
+                editCourseViewModel.doneNavigate()
+            }
+        })
         editCourseViewModel.error.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             if (it.isNotEmpty()) {
                 Toast.makeText(activity, it, Toast.LENGTH_LONG).show()

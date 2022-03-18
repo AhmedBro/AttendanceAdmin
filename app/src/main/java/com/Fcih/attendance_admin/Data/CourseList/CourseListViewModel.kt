@@ -41,9 +41,9 @@ class CourseListViewModel : ViewModel() {
         var courses = ArrayList<Course>()
         InitFireStore.instance.collection(Constants.COURSES_TABLE)
             .get().addOnSuccessListener {
-               /*he will go through the returned collection document by document
-               So this(course) which we use as iterative refers to every doc in
-               the returned collection*/
+                /*he will go through the returned collection document by document
+                So this(course) which we use as iterative refers to every doc in
+                the returned collection*/
                 for (course in it) {
                     var newCourse = course.toObject(Course::class.java)
                     courses.add(newCourse)
@@ -57,26 +57,17 @@ class CourseListViewModel : ViewModel() {
             }
         return courses
     }
-
-
-
-
-
-
-
-
-
     fun deleteCourse(course: Course) {
         InitFireStore.instance.collection(Constants.COURSES_TABLE)
-            .document(course.courseCode + " " + course.courseGroup).delete().addOnSuccessListener {
+            .document(course.courseCode + course.courseGroup).delete().addOnSuccessListener {
 
                 Toast.makeText(MainActivity.context, "Course has been deleted", Toast.LENGTH_LONG)
                     .show()
 
             }
-                .addOnFailureListener {
-                    Toast.makeText(MainActivity.context, it.message, Toast.LENGTH_LONG).show()
+            .addOnFailureListener {
+                Toast.makeText(MainActivity.context, it.message, Toast.LENGTH_LONG).show()
 
-                }
+            }
     }
 }

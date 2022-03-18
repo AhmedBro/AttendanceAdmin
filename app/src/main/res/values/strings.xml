@@ -14,8 +14,8 @@
     <string name="add_student">Add student</string>
     <string name="show_teacher_table">Show teacher table</string>
     <string name="show_student_table">Show student table</string>
-    <string name="welcome">Welcome...</string>
-    <string name="admin_guide">As an admin, You must record the data of steel every year, As well as the data of the teachers.</string>
+    <string name="welcome">AMMMA Team</string>
+    <string name="admin_guide">As an admin, You must record the data of All Teachers And Students every year, As well as the data of the Courses.</string>
     <string name="username">Username</string>
     <string name="forgotten_password">Forgotten password?</string>
     <string name="teacher_name">Teacher Name:</string>
@@ -35,6 +35,9 @@
     <string name="no_teachers_yet">No teachers yet.</string>
     <string name="save">Save</string>
     <string name="save_cources">save</string>
+    <string name="search_student"><u>Search for a student</u></string>
+    <string name="search">Search</string>
+    <string name="copyRight">© 2022 Fcih AmmmA team</string>
     <string-array name="Groups">
         <item> Group 1</item>
         <item> Group 2</item>

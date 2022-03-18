@@ -35,8 +35,6 @@ class AddCourseToTeacherFragment : Fragment() {
     lateinit var mTeacher: Teacher
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -80,11 +78,9 @@ class AddCourseToTeacherFragment : Fragment() {
                 //to the the selected courses because firestore doesn't allow add new item in array
 
 
-
-
                 mTeacher = AddCourseToTeacherFragmentArgs.fromBundle(requireArguments()).teacherData
                 var courses = mTeacher.CoursesId
-                val addedselected=adapter.selectedCourses
+                val addedselected = adapter.selectedCourses
 
 
 
@@ -95,26 +91,28 @@ class AddCourseToTeacherFragment : Fragment() {
 
 
 
-                mAddCourseToTeacherBtn.setOnClickListener{
+                mAddCourseToTeacherBtn.setOnClickListener {
 
-var justseleted = adapter.selectedCourses
+                    var justseleted = adapter.selectedCourses
 
                     if (courses != null) {
-                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,courses,addedselected)
+                        course_checkbox_ViewModel.addCourseToteacher(
+                            mTeacher,
+                            courses,
+                            addedselected
+                        )
                     }
-                    if (courses ==null)
-                    {
-                        var ss : ArrayList<String> = ArrayList()
-                        course_checkbox_ViewModel.addCourseToteacher(mTeacher,ss,addedselected)
+                    if (courses == null) {
+                        var ss: ArrayList<String> = ArrayList()
+                        course_checkbox_ViewModel.addCourseToteacher(mTeacher, ss, addedselected)
                     }
 
 
 
 
-                  for (i in addedselected)
-                  {
-                      Log.d("justselected",i)
-                  }
+                    for (i in addedselected) {
+                        Log.d("justselected", i)
+                    }
 
                 }
 
@@ -131,12 +129,11 @@ var justseleted = adapter.selectedCourses
 
         return view
     }
+
     @SuppressLint("WrongConstant")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getData()
-
-
 
 
         /*   var mylist =ArrayList<Course_checkBox>()
@@ -157,7 +154,6 @@ var justseleted = adapter.selectedCourses
            mCheckBoxRecycler.adapter=my_adapter*/
 
 
-
     }
 
 
@@ -165,8 +161,6 @@ var justseleted = adapter.selectedCourses
         lifecycleScope.launch(Dispatchers.IO) {
             coursesList = async { course_checkbox_ViewModel.getAllChekBoxCourses() }.await()
         }
-
-
 
 
     }

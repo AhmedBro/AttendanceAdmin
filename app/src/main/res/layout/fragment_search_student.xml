@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.Bridge"
+    tools:context=".Desgin.Fragments.LoginFragment">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/mLogoView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_10ssp"
+        android:background="@drawable/selector3"
+        android:src="@drawable/logo_admin"
+        app:layout_constraintBottom_toTopOf="@id/mSearchTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/mStudentIdEt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_75ssp"
+        android:layout_marginTop="@dimen/_50ssp"
+        android:layout_marginEnd="@dimen/_75ssp"
+        android:layout_marginBottom="@dimen/_50ssp"
+        android:background="@drawable/edit_text_forget_password"
+        android:inputType="number"
+        android:padding="@dimen/_10ssp"
+        android:textColor="@color/black"
+        android:textColorHint="#808382"
+        app:layout_constraintBottom_toTopOf="@+id/mSearchBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mSearchTv" />
+
+    <Button
+        android:id="@+id/mSearchBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_35ssp"
+        android:layout_marginEnd="@dimen/_35ssp"
+        android:background="@drawable/round_btn"
+        android:text="@string/search"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_15ssp"
+        app:circularflow_defaultRadius="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/mStudent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mStudentIdEt" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50ssp"
+        android:layout_marginBottom="@dimen/_50ssp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mSearchBtn">
+
+
+        <TextView
+            android:id="@+id/mStudentId"
+            android:layout_width="170dp"
+            android:layout_height="@dimen/_40ssp"
+            android:background="@drawable/course_shap"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            tools:text="20180512" />
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/mSearchProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mSearchBtn" />
+
+    <TextView
+        android:id="@+id/mSearchTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_10ssp"
+        android:text="Search for Student By Id"
+        android:textAlignment="center"
+        android:padding="@dimen/_5ssp"
+        android:layout_marginTop="@dimen/_5ssp"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mStudentIdEt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mLogoView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
