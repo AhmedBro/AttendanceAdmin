@@ -35,6 +35,8 @@
     <string name="no_teachers_yet">No teachers yet.</string>
     <string name="save">Save</string>
     <string name="save_cources">save</string>
+    <string name="search_student"><u>Search for a student</u></string>
+    <string name="search">Search</string>
     <string-array name="Groups">
         <item> Group 1</item>
         <item> Group 2</item>

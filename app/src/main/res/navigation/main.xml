@@ -69,7 +69,11 @@
         android:id="@+id/addStudentsFragment"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.AddStudentsFragment"
         android:label="fragment_add_students"
-        tools:layout="@layout/fragment_add_students" />
+        tools:layout="@layout/fragment_add_students" >
+        <action
+            android:id="@+id/action_addStudentsFragment_to_searchStudentFragment"
+            app:destination="@id/searchStudentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/teacherListFragment"
         android:name="com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.TeacherListFragment"
@@ -148,4 +152,9 @@
         <argument android:name="CourseData"
             app:argType="com.Fcih.attendance_admin.Data.CourseList.Course" />
     </fragment>
+    <fragment
+        android:id="@+id/searchStudentFragment"
+        android:name="com.Fcih.attendance_admin.Desgin.Fragments.SearchStudentFragment"
+        android:label="SearchStudentFragment"
+        tools:layout="@layout/fragment_search_student"/>
 </navigation>
