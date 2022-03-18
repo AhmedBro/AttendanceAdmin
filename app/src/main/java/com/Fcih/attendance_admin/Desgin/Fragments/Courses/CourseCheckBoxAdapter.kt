@@ -36,18 +36,47 @@ var course_info = mylist[position]
         var c =course_info.courseGroup.toString()
 
 
-holder.thelayout.setOnClickListener{
-   // Log.d("selecid","before selected")
-    //Log.d("selecid",i)
-   // holder.thelayout.setBackgroundResource(R.drawable.selector2)
-   selectedCourses.add(i+c)
-    holder.checkbox.isChecked=true
-    holder.thelayout.setOnClickListener{
-        selectedCourses.remove(i+c)
-        holder.checkbox.isChecked=false
+holder.checkbox.setOnClickListener{
+    if (holder.checkbox.isChecked==true)
+    selectedCourses.add(i + c)
+    else
+        selectedCourses.remove(i + c)
+
     }
 
-}
+
+
+
+
+
+
+  /*  holder.thelayout.setOnClickListener {
+        if( holder.checkbox.isChecked == true) {
+            holder.checkbox.isChecked = false
+        selectedCourses.remove(i + c)
+
+    }
+        else{
+            holder.checkbox.isChecked = true
+            selectedCourses.add(i + c)
+        }
+        }*/
+
+      /*  holder.thelayout.setOnClickListener {
+            if( holder.checkbox.isChecked==true) {
+                selectedCourses.remove(i + c)
+                holder.checkbox.isChecked = false
+
+            }
+        }*/
+
+
+
+
+
+        // Log.d("selecid","before selected")
+        //Log.d("selecid",i)
+        // holder.thelayout.setBackgroundResource(R.drawable.selector2)
 
     }
     override fun getItemCount(): Int {

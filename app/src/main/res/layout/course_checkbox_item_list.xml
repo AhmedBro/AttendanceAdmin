@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
 
     android:layout_marginBottom="@dimen/_5ssp"
-    android:background="@drawable/course_shap"
-    android:onClick="mCourseOnclick">
+    android:background="@drawable/course_shap">
 
     <TextView
         android:id="@+id/mCheckCourseCode"
