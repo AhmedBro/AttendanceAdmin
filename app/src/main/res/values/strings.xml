@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AttendanceAdmin</string>
+    <string name="app_name">Admin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_your_mail">Enter Your Mail</string>
@@ -37,7 +37,7 @@
     <string name="save_cources">save</string>
     <string name="search_student"><u>Search for a student</u></string>
     <string name="search">Search</string>
-    <string name="copyRight">© 2022 Fcih AmmmA team</string>
+    <string name="copyRight">© 2022 FCAIH <b>AMMMA</b> team</string>
     <string-array name="Groups">
         <item> Group 1</item>
         <item> Group 2</item>

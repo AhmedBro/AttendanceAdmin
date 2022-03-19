@@ -132,7 +132,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/primary"
         android:layout_margin="@dimen/_5ssp"
-        android:textStyle="bold"
+        android:textStyle="italic"
+        android:textSize="@dimen/_8ssp"
         />
 
 
