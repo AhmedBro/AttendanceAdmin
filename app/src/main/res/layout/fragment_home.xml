@@ -50,7 +50,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_50ssp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="@dimen/_15ssp"
                 android:layout_marginEnd="@dimen/_50ssp"
                 android:foregroundGravity="center_horizontal"
                 android:text="@string/admin_guide"
@@ -131,7 +131,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textColor="@color/primary"
-        android:layout_margin="@dimen/_10ssp"
+        android:layout_margin="@dimen/_5ssp"
         android:textStyle="bold"
         />
 

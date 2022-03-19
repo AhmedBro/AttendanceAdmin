@@ -14,7 +14,7 @@
     <string name="add_student">Add student</string>
     <string name="show_teacher_table">Show teacher table</string>
     <string name="show_student_table">Show student table</string>
-    <string name="welcome">AMMMA Team</string>
+    <string name="welcome">Welcome Admin</string>
     <string name="admin_guide">As an admin, You must record the data of All Teachers And Students every year, As well as the data of the Courses.</string>
     <string name="username">Username</string>
     <string name="forgotten_password">Forgotten password?</string>

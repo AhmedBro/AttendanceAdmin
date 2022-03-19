@@ -1,13 +1,14 @@
 package com.Fcih.attendance_admin.Desgin.Fragments.Teachsers
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -17,13 +18,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.Fcih.attendance_admin.Data.CourseList.*
 import com.Fcih.attendance_admin.Data.TeacherList.Teacher
+import com.Fcih.attendance_admin.Desgin.Activities.MainActivity
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseCheckBoxAdapter
 import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListAdapter
-import com.Fcih.attendance_admin.Desgin.Fragments.Courses.CourseListFragmentDirections
 import com.Fcih.attendance_admin.R
-import kotlinx.android.synthetic.main.fragment_course_list.*
 import kotlinx.android.synthetic.main.fragment_show_teacher_table.*
-import kotlinx.android.synthetic.main.fragment_teacher_list.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -38,6 +37,7 @@ class ShowTeacherTableFragment : Fragment() {
     lateinit var adapter: CourseListAdapter
 
     var coursecodes: ArrayList<String> = ArrayList()
+    var clickedCourse = Course()
 
 
     @SuppressLint("WrongConstant")
@@ -61,7 +61,7 @@ class ShowTeacherTableFragment : Fragment() {
             Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
         })
 
-       showtableviewmodel.showProgressbar.observe(viewLifecycleOwner, Observer {
+        showtableviewmodel.showProgressbar.observe(viewLifecycleOwner, Observer {
             if (it) {
                 mTeacherTableProgressBar.visibility = View.VISIBLE
             } else {
@@ -84,6 +84,19 @@ class ShowTeacherTableFragment : Fragment() {
                 rv.adapter = adapter
             }
 
+            adapter.setOnItemLongClickListener {
+                clickedCourse = it
+                deleteCourse(it)
+            }
+
+        })
+
+        showtableviewmodel.doneDeleting.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                coursecodes.remove(clickedCourse.courseCode + clickedCourse.courseGroup)
+                getData()
+                showtableviewmodel.doneDeletingCourse()
+            }
         })
         return view
 
@@ -97,33 +110,60 @@ class ShowTeacherTableFragment : Fragment() {
 
 
 
-if (mTeacher.CoursesId==null)
-{
-    coursecodes= ArrayList()
+        if (mTeacher.CoursesId == null) {
+            coursecodes = ArrayList()
 
 
-}
-        else
-{
-    coursecodes= mTeacher.CoursesId!!
-}
-
-
-        mTeacher_Name.text=  mTeacher.teacherName
-
-       getData()
-
-        mAddTeacherCourseTv.setOnClickListener {
-            Navigation.findNavController(this.requireView())
-                .navigate(ShowTeacherTableFragmentDirections.actionShowTeacherTableFragmentToAddCourseToTeacherFragment(mTeacher))
+        } else {
+            coursecodes = mTeacher.CoursesId!!
         }
 
 
+        mTeacher_Name.text = mTeacher.teacherName
+
+        getData()
+
+        mAddTeacherCourseTv.setOnClickListener {
+            Navigation.findNavController(this.requireView())
+                .navigate(
+                    ShowTeacherTableFragmentDirections.actionShowTeacherTableFragmentToAddCourseToTeacherFragment(
+                        mTeacher
+                    )
+                )
+        }
 
 
     }
-    fun getseleted (ss :ArrayList<String>): ArrayList<String> {
-       var s= course_checkbox_adapter.getSelectedCourse()
+
+    fun deleteCourse(course: Course) {
+
+        val builder1: AlertDialog.Builder = AlertDialog.Builder(MainActivity.context)
+        builder1.setMessage(course.courseName)
+        builder1.setCancelable(true)
+
+        builder1.setPositiveButton(
+            "Delete",
+            DialogInterface.OnClickListener {
+
+                    dialog, id ->
+                showtableviewmodel.deleteCourse(course.courseCode + course.courseGroup, mTeacher)
+                getData()
+
+                dialog.cancel()
+
+            })
+
+        builder1.setNegativeButton(
+            "Cancel",
+            DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
+
+        val alert11: AlertDialog = builder1.create()
+        alert11.show()
+    }
+
+
+    fun getseleted(ss: ArrayList<String>): ArrayList<String> {
+        var s = course_checkbox_adapter.getSelectedCourse()
         return s
     }
 
@@ -134,6 +174,8 @@ if (mTeacher.CoursesId==null)
 
 
     }
+
+
 }
 /* val cources = ArrayList<Course>()
      val cource1 = Course("ds122", "DataStructure", "sundy", "11pm", "1pm", "h1", "d",null)
