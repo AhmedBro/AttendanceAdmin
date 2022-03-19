@@ -25,12 +25,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mCheckBoxRecycler"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="@dimen/_5ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@id/mAddCourseToTeacherBtn"
         tools:listitem="@layout/course_checkbox_item_list"
         android:layout_margin="@dimen/_10ssp"
         />
@@ -46,7 +47,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/mCheckBoxRecycler"
         app:layout_constraintEnd_toEndOf="@+id/mCheckBoxRecycler"
         app:layout_constraintStart_toStartOf="@+id/mCheckBoxRecycler"
-        app:layout_constraintTop_toTopOf="@+id/mCheckBoxRecycler" />
+        app:layout_constraintTop_toTopOf="@+id/mCheckBoxRecycler"
+        app:layout_constraintBottom_toTopOf="@id/mAddCourseToTeacherBtn"/>
     <ProgressBar
         android:id="@+id/mCheckBoxCoursesProgressBar"
         style="?android:attr/progressBarStyle"
@@ -55,19 +57,18 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/mCheckBoxRecycler"
         app:layout_constraintEnd_toEndOf="@+id/mCheckBoxRecycler"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/mCheckBoxRecycler"
         app:layout_constraintTop_toTopOf="@+id/mCheckBoxRecycler" />
 
     <Button
         android:id="@+id/mAddCourseToTeacherBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="@dimen/_5ssp"
         android:background="@drawable/selector4"
         android:text="@string/save_cources"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mCheckBoxRecycler" />
 
