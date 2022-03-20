@@ -38,6 +38,14 @@
     <string name="search_student"><u>Search for a student</u></string>
     <string name="search">Search</string>
     <string name="copyRight">© 2022 FCAIH <b>AMMMA</b> team</string>
+    <string name="course_name">Course Name</string>
+    <string name="course_code">Course Code</string>
+    <string name="date">Date</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="place">Place</string>
+    <string name="search_for_student_by_id">Search for Student By Id</string>
+    <string name="last_id">Last ID</string>
     <string-array name="Groups">
         <item> Group 1</item>
         <item> Group 2</item>

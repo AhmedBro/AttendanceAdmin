@@ -67,6 +67,7 @@
         android:layout_marginTop="@dimen/_5ssp"
         android:background="@drawable/selector4"
         android:text="@string/save_cources"
+        android:layout_marginBottom="@dimen/_10ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

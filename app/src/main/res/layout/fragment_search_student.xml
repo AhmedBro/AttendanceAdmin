@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10ssp"
         android:layout_marginEnd="@dimen/_10ssp"
-        android:text="Search for Student By Id"
+        android:text="@string/search_for_student_by_id"
         android:textAlignment="center"
         android:padding="@dimen/_5ssp"
         android:layout_marginTop="@dimen/_5ssp"
