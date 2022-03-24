@@ -27,11 +27,15 @@ class CourseCheckBoxAdapter(var mylist: ArrayList<Course>):RecyclerView.Adapter<
     override fun onBindViewHolder(holder: view_holder, position: Int) {
 var course_info = mylist[position]
         holder.name.text = course_info.courseName
-        holder.code.text=course_info.courseCode
         holder.day.text=course_info.courseDate
         holder.from_date.text=course_info.courseTimeFrom
         holder.to_date.text=course_info.courseTimeTo
         holder.location.text=course_info.coursePlace
+        if (course_info.courseGroup=="Group 1"){
+            holder.code.text=course_info.courseCode+"\nG1"
+        }else{
+            holder.code.text=course_info.courseCode+"\nG2"
+        }
         var i = course_info.courseCode.toString()
         var c =course_info.courseGroup.toString()
 
