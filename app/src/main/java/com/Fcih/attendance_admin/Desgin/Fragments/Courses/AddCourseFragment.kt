@@ -78,8 +78,7 @@ class AddCourseFragment : Fragment(R.layout.fragment_add_course) {
                             courseStartTime,
                             courseEndTime,
                             coursePlace,
-                            courseGroup,
-                            null
+                            courseGroup
                         )
                     )
 

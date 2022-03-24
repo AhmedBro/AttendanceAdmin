@@ -11,9 +11,7 @@ class Course :Serializable  {
     var courseTimeTo: String?= null
     var coursePlace: String?= null
     var courseGroup: String?= null
-    var Lectuers:ArrayList<Lectuers>?= null
     constructor()
-
 
    //for fill course table
     constructor(
@@ -24,7 +22,6 @@ class Course :Serializable  {
         courseTimeTo: String?,
         coursePlace: String?,
         courseGroup: String?,
-        Lectuers: ArrayList<Lectuers>?
     ) {
         this.courseCode = courseCode
         this.courseName = courseName
@@ -33,6 +30,5 @@ class Course :Serializable  {
         this.courseTimeTo = courseTimeTo
         this.coursePlace = coursePlace
         this.courseGroup = courseGroup
-        this.Lectuers = Lectuers
     }
 }

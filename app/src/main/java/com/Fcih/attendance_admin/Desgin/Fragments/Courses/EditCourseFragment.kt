@@ -81,8 +81,7 @@ class EditCourseFragment : Fragment() {
                             courseStartTime,
                             courseEndTime,
                             coursePlace,
-                            courseGroup,
-                            null
+                            courseGroup
                         )
                     )
 
