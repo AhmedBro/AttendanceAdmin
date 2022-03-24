@@ -23,11 +23,16 @@ class CourseListAdapter(var allCoursesList : List<Course>?) : RecyclerView.Adapt
         holder.itemView
         holder.itemView.apply {
             mCourseName.text=allCoursesList!![position].courseName
-            mCourseCode.text=allCoursesList!![position].courseCode
+
             mCourseDay.text=allCoursesList!![position].courseDate
             mCourseTimeTo.text= allCoursesList!![position].courseTimeFrom
             mCourseTimeFrom.text = allCoursesList!![position].courseTimeTo
             mCourseLocation.text=allCoursesList!![position].coursePlace
+            if (allCoursesList!![position].courseGroup=="Group 1"){
+                mCourseCode.text=allCoursesList!![position].courseCode+"\nG1"
+            }else{
+                mCourseCode.text=allCoursesList!![position].courseCode+"\nG2"
+            }
 
         }
         holder.itemView.setOnLongClickListener {
