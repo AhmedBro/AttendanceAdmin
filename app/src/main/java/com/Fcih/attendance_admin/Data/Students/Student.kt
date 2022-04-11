@@ -21,4 +21,5 @@ class Student : Serializable{
         this.StudentName = StudentName
         this.CoursesId = CoursesId
     }
+
 }
