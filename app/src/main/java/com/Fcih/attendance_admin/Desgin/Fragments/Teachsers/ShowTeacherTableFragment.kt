@@ -119,7 +119,7 @@ class ShowTeacherTableFragment : Fragment() {
         }
 
 
-        mTeacher_Name.text = mTeacher.teacherName
+        mTeacher_Name.text = mTeacher.teacherName+mTeacher.id
 
         getData()
 
