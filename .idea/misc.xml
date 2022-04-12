@@ -29,12 +29,20 @@
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/fragment_teacher_list.xml" value="0.1962962962962963" />
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/list_item_course_view.xml" value="0.5" />
         <entry key="..\:/AttendanceAdmin/app/src/main/res/layout/list_item_teacher_view.xml" value="0.1685185185185185" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/course_checkbox_item_list.xml" value="0.23233695652173914" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_add_course.xml" value="0.21784420289855072" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_add_course_to_teacher.xml" value="0.23645833333333333" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_add_students.xml" value="0.21784420289855072" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_add_teacher.xml" value="0.1598731884057971" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_course_list.xml" value="0.1598731884057971" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_edit_course.xml" value="0.21784420289855072" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_forget_password.xml" value="0.17300724637681159" />
         <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_search_student.xml" value="0.21784420289855072" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_show_teacher_table.xml" value="0.1598731884057971" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_splash.xml" value="0.17300724637681159" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/fragment_teacher_list.xml" value="0.1598731884057971" />
+        <entry key="..\:/GP/Admin App/GP/app/src/main/res/layout/list_item_course_view.xml" value="0.264" />
         <entry key="..\:/GP/app/src/main/res/layout/course_checkbox_item_list.xml" value="0.18568840579710144" />
         <entry key="..\:/GP/app/src/main/res/layout/fragment_add_course.xml" value="0.13858695652173914" />
         <entry key="..\:/GP/app/src/main/res/layout/list_item_course_view.xml" value="0.264" />

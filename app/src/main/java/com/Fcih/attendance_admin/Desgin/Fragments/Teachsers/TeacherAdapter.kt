@@ -33,7 +33,7 @@ class TeacherAdapter() :
 
     override fun onBindViewHolder(holder: TeacherViewHolder, position: Int) {
         holder.apply {
-            name.text = getItem(position).teacherName
+            name.text = getItem(position).teacherName+getItem(position).id
             itemView.setOnClickListener {
                 onItemClickListener?.let { it(getItem(position)) }
             }
