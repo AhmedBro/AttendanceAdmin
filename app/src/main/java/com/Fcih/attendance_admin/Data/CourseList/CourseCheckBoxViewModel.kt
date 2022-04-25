@@ -18,6 +18,7 @@ import kotlin.math.log
 class CourseCheckBoxViewModel : ViewModel() {
     var context = this
     lateinit var adapter: CourseCheckBoxAdapter
+    var flag :Boolean? = null
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean>
         get() = _isSuccess
@@ -74,20 +75,25 @@ class CourseCheckBoxViewModel : ViewModel() {
     ) {
         var s: String? = teaccher.teacherName + teaccher.id
 
-
         if (s != null) {
             if (addedselected.size != 0) {
                 if (allcourses.isNotEmpty()) {
                     for (i in addedselected) {
                         if (!allcourses.contains(i)) {
                             allcourses.add(i)
+                            flag = false
+                        }else{
+                            flag = true
+                            _error.value = "Course already exist"
                         }
                     }
                     InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
                         .update("coursesId", allcourses)
                         .addOnSuccessListener {
                             _showProgressbar.value = false
-                            _error.value = "Course Added Successfully"
+                            if (!flag!!){
+                                _error.value = "Course Added Successfully"
+                            }
                             _isSuccess.value = true
                         }
                         .addOnFailureListener {
@@ -96,8 +102,8 @@ class CourseCheckBoxViewModel : ViewModel() {
                             _isSuccess.value = false
                         }
 
-                }else{
-                    teaccher.CoursesId=addedselected
+                } else {
+                    teaccher.CoursesId = addedselected
 
                     InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
                         .set(teaccher)
@@ -112,8 +118,6 @@ class CourseCheckBoxViewModel : ViewModel() {
                             _isSuccess.value = false
                         }
                 }
-
-
 
 
             }
