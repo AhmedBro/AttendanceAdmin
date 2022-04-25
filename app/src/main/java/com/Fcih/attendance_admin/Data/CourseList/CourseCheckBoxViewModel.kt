@@ -76,13 +76,11 @@ lateinit var adapter :CourseCheckBoxAdapter
 
          if (s != null) {
              if (addedselected.size !=0) {
-if (allcourses.isEmpty())
+            if (allcourses.isEmpty())
 {
-    for (i in allcourses){
-        if(teaccher.CoursesId!!.contains(i)){
-
-        }else{
-            teaccher.CoursesId=addedselected
+    for (i in addedselected){
+        if(!teaccher.CoursesId!!.contains(i)){
+            teaccher.CoursesId!!.add(i)
         }
 
     }
