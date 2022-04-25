@@ -54,7 +54,7 @@ class AddCourseToTeacherFragment : Fragment() {
         course_checkbox_ViewModel = ViewModelProvider(this).get(CourseCheckBoxViewModel::class.java)
         course_checkbox_ViewModel.showProgressBar()
         course_checkbox_ViewModel.error.observe(viewLifecycleOwner, Observer {
-            Toast.makeText(activity, it, Toast.LENGTH_LONG).show()
+            Toast.makeText(activity, it, Toast.LENGTH_SHORT).show()
         })
         course_checkbox_ViewModel.showProgressbar.observe(viewLifecycleOwner, Observer {
             if (it) {

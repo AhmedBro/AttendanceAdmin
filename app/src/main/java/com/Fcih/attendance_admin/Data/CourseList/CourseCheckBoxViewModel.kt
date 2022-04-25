@@ -18,7 +18,8 @@ import kotlin.math.log
 class CourseCheckBoxViewModel : ViewModel() {
     var context = this
     lateinit var adapter: CourseCheckBoxAdapter
-    var flag :Boolean? = null
+    var redundantFlag :Boolean = false
+    var addFlag :Boolean = false
     private val _isSuccess = MutableLiveData<Boolean>()
     val isSuccess: LiveData<Boolean>
         get() = _isSuccess
@@ -81,18 +82,21 @@ class CourseCheckBoxViewModel : ViewModel() {
                     for (i in addedselected) {
                         if (!allcourses.contains(i)) {
                             allcourses.add(i)
-                            flag = false
+                            addFlag = true
                         }else{
-                            flag = true
-                            _error.value = "Course already exist"
+                            redundantFlag = true
                         }
                     }
                     InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
                         .update("coursesId", allcourses)
                         .addOnSuccessListener {
                             _showProgressbar.value = false
-                            if (!flag!!){
-                                _error.value = "Course Added Successfully"
+                            if (addFlag!! && redundantFlag!!){
+                                _error.value = "Only new courses have been added"
+                            }else if(addFlag!!){
+                                _error.value = "Course added successfully"
+                            }else if (redundantFlag!!){
+                                _error.value = "Course already exist"
                             }
                             _isSuccess.value = true
                         }
