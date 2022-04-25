@@ -56,7 +56,6 @@ lateinit var adapter :CourseCheckBoxAdapter
                     for (course in it) {
                         var newCourse = course.toObject(Course::class.java)
 
-
                         Log.d(newCourse.courseCode,"MennaTest")
                         courses.add(newCourse)
                     }
@@ -79,7 +78,15 @@ lateinit var adapter :CourseCheckBoxAdapter
              if (addedselected.size !=0) {
 if (allcourses.isEmpty())
 {
-    teaccher.CoursesId=addedselected
+    for (i in allcourses){
+        if(teaccher.CoursesId!!.contains(i)){
+
+        }else{
+            teaccher.CoursesId=addedselected
+        }
+
+    }
+
     InitFireStore.instance.collection(Constants.TEACHER_TABLE).document(s)
         .set(teaccher)
         .addOnSuccessListener {
