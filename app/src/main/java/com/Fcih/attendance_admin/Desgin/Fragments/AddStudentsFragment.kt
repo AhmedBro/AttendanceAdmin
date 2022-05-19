@@ -13,7 +13,6 @@ import com.Fcih.attendance_admin.Data.Students.Student
 import com.Fcih.attendance_admin.Data.Students.StudentViewModel
 import com.Fcih.attendance_admin.Desgin.Fragments.Teachsers.AddTeacherDirections
 import com.Fcih.attendance_admin.R
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_add_students.*
 import kotlinx.coroutines.Dispatchers

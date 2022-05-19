@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/java/com/Fcih/attendance_admin/Domain/Constants.kt
